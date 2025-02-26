@@ -1,0 +1,20 @@
+from tkinter import *
+
+
+def Otkrit():
+    okno2 = Tk()
+    okno2.title("Второе Окно")
+    okno2.geometry("250x250")
+    btn2 = Button(text="Закрыть окно",
+                  command=lambda:okno.destroy())
+    btn2.pack()
+
+
+okno = Tk()
+okno.title("Первое Окно")
+okno.geometry("500x500")
+btn = Button(text="Второе Окно",command=Otkrit)
+btn.pack()
+
+
+okno.mainloop()

@@ -1,0 +1,130 @@
+import pickle
+ 
+FILENAME = "user.dat"
+ 
+name = "Tom"
+age = 19
+ 
+with open(FILENAME, "wb") as file:
+    pickle.dump(name, file)
+    pickle.dump(age, file)
+
+
+with open(FILENAME, "rb") as file:
+    name = pickle.load(file)
+    age = pickle.load(file)
+    print("Имя:", name, "\tВозраст:", age)
+
+
+==================================================
+
+import pickle
+ 
+FILENAME = "users.dat"
+ 
+users = [
+    ["Tom", 28, True],
+    ["Alice", 23, False],
+    ["Bob", 34, False]
+]
+ 
+with open(FILENAME, "wb") as file:
+    pickle.dump(users, file)
+ 
+ 
+with open(FILENAME, "rb") as file:
+    users_from_file = pickle.load(file)
+    for user in users_from_file:
+        print("Имя:", user[0], "\tAge:", user[1], "\tEvli:", user[2])
+
+=========================================================
+
+
+import pickle
+
+# An example object to pickle
+data = {
+    'name': 'John',
+    'age': 30,
+    'city': 'New York'
+}
+
+# Pickle the object
+with open('data.pickle', 'wb') as file:
+    pickle.dump(data, file)
+
+# Unpickle the object
+with open('data.pickle', 'rb') as file:
+    loaded_data = pickle.load(file)
+
+# Print the loaded data
+print(loaded_data)
+
+
+=========================================================================
+
+
+import pickle
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+person = Person('Alice', 25)
+
+# Pickle the object
+with open('person.pickle', 'wb') as file:
+    pickle.dump(person, file)
+
+# Unpickle the object
+with open('person.pickle', 'rb') as file:
+    loaded_person = pickle.load(file)
+
+print(loaded_person.name)  # Output: Alice
+print(loaded_person.age)   # Output: 25
+
+=============================================================================
+
+import pickle
+
+my_list = [1, 2, 3, 4, 5]
+
+# Pickle the list
+with open('list.pickle', 'wb') as file:
+    pickle.dump(my_list, file)
+
+# Unpickle the list
+with open('list.pickle', 'rb') as file:
+    loaded_list = pickle.load(file)
+
+print(loaded_list)  # Output: [1, 2, 3, 4, 5]
+
+=============================================================================
+
+
+import pickle
+
+data_1 = [1, 2, 3]
+data_2 = {'a': 10, 'b': 20}
+
+# Pickle multiple objects together
+with open('data.pickle', 'wb') as file:
+    pickle.dump((data_1, data_2), file)
+
+# Unpickle multiple objects
+with open('data.pickle', 'rb') as file:
+    loaded_data_1, loaded_data_2 = pickle.load(file)
+
+print(loaded_data_1)  # Output: [1, 2, 3]
+print(loaded_data_2)  # Output: {'a': 10, 'b': 20}
+
+
+==============================================================================
+
+
+Конструкция with в Python используется для работы с файлами и другими ресурсами. Это позволяет автоматически управлять открытием и закрытием ресурсов, что упрощает код и предотвращает утечки ресурсов.
+
+
+Конструкция with в Python используется для управления ресурсами, такими как файлы, таким образом, чтобы они автоматически открывались и закрывались в нужное время. Она предоставляет блок кода, в котором ресурсы открываются при входе в блок и автоматически закрываются при выходе из блока, даже если внутри блока произошла ошибка.
+

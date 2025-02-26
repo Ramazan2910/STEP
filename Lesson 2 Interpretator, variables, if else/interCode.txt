@@ -1,0 +1,21 @@
+Для кодового редактора:
+
+https://www.jetbrains.com/pycharm/download/?section=windows
+
+PyCharm Community Edition (strogo ne nado professional)
+The IDE for Pure Python Development (for windows or mac)
+
+----------------------------------------------------------
+
+Для интерпретатора:
+
+Python 3.9 download
+
+https://www.python.org/downloads/release/python-3913/
+
+-------------------------------------------------------------
+
+Screenshot - otpravit to chto ustanovili
+
+
+

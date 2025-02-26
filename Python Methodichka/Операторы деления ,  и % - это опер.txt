@@ -1,0 +1,71 @@
+Операторы деления /, // и % - это операторы для выполнения операций деления в языке программирования Python.
+
+1. / - оператор деления, возвращает результат деления в формате с плавающей точкой (float). Например, 5/2 даст результат 2.5.
+
+2. // - оператор целочисленного деления, возвращает только целую часть результата деления без остатка (integer). Например, 5//2 даст результат 2, так как 2 помещается в 5 два раза без остатка.
+
+3. % - оператор остатка от деления, возвращает только остаток от деления. Например, 5%2 даст результат 1, так как при делении 5 на 2 остается остаток 1.
+
+Примеры использования операторов деления в Python:
+
+result1 = 5 / 2
+print(result1)  # Вывод: 2.5
+
+result2 = 5 // 2
+print(result2)  # Вывод: 2
+
+remainder = 5 % 2
+print(remainder)  # Вывод: 1
+
+
+Таким образом, эти операторы позволяют выполнять различные операции с числами в Python, включая деление с плавающей точкой, целочисленное деление и получение остатка от деления.
+
+# num = 5/2
+# num2=5//2
+# print(num)
+# print(num2)
+
+# num3 = 11%3
+# num4 = 5-(5//2)*2
+# print(num3)
+#
+#
+# num5 = 73345%60
+# print(num5)
+#
+# num_bolunen =73345
+# num_bolen = 60
+#
+#
+# result = num_bolunen - (num_bolunen//num_bolen)*num_bolen
+# print(result)
+
+
+# num = int(input('Uc ededli reqem daxil edin:'))
+# 2*100 + 4*10 + 5*1
+# 5*100 + 4*10 + 2*1
+# yuzluk = num//100
+# onluq =num//10%10
+# teklik = num%10
+# result = teklik*100+onluq*10+yuzluk*1
+# print(result)
+# Tapsiriq1
+# Istifadeci klaviaturadan 4 ededli reqem daxil edir.
+# Hemin reqemi guzgulu shekilde ekrana cap edin.
+# Numune:
+# reqem = 1234
+# netice: 4321
+
+
+num = int(input('Dord ededli reqem daxil edin:'))
+#1234
+minlik = num//1000
+yuzluk = num//100%10
+onluq =num//10%10
+teklik = num%10
+result = teklik*1000+onluq*100+yuzluk*10+ minlik
+print(result)
+
+
+=================================================
+

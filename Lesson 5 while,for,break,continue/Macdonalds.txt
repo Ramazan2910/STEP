@@ -1,0 +1,6 @@
+Создать меню макдональдса:с помощью циклов и вложенных циклов и if elif)
+
+1 Burgers (Big mac, Big taysty, MacChiken)( BigMac 10 azn), (Big taysty (12 azn) Back
+2 Drinks
+3 Snacks
+4 Exit

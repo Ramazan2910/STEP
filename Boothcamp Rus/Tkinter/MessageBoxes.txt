@@ -1,0 +1,22 @@
+import tkinter
+import tkinter.messagebox
+
+def Info():
+    tkinter.messagebox.showinfo(title="Info",message="Info message")
+
+def Warning():
+    tkinter.messagebox.showwarning(title="Attention",
+                                   message="Attention message!")
+
+def Error():
+    tkinter.messagebox.showerror(title="Error",
+                                   message="Error mesage!")
+
+pencere = tkinter.Tk()
+pencere.geometry("500x500")
+
+infoButton = tkinter.Button(text="Information",command=Info).pack()
+warningButton = tkinter.Button(text="Warning",command= Warning).pack()
+errorButton = tkinter.Button(text="Error",command= Error).pack()
+
+pencere.mainloop()

@@ -1,0 +1,120 @@
+import tkinter
+
+def Click():
+    print("Clicked!")
+
+pencere = tkinter.Tk()
+pencere.title("Facebook")
+pencere.geometry("500x500")
+
+lbl = tkinter.Label(text="Salam",font=("Arial",40))
+lbl.pack()
+
+btn = tkinter.Button(text="Click me",background="red",command=Click)
+btn.pack()
+
+entry = tkinter.Entry()
+entry.pack()
+
+pencere.mainloop()
+
+================================================================================
+
+from tkinter import *
+ 
+root = Tk()
+root.iconbitmap("ikonka.ico")
+root.geometry("300x250") 
+root.mainloop()
+
+================================================================================
+
+from tkinter import *
+from tkinter import ttk
+ 
+root = Tk()
+root.geometry("250x200")
+ 
+btn = ttk.Button(text="Click Me", state=["disabled"])
+btn.pack()
+ 
+root.mainloop(
+
+===============================================================================
+
+
+from tkinter import *
+
+def click():
+    window = Tk()
+    window.title("Ikinci pencere")
+    window.geometry("300x300")
+
+root = Tk()
+root.title("Birinci pencere")
+root.geometry("600x600")
+
+button = Button(text="Pencere click", command=click)
+button.pack()
+
+root.mainloop()
+
+==============================================================================
+
+
+from tkinter import *
+
+def click():
+    window = Tk()
+    window.title("Ikinci pencere")
+    window.geometry("300x300")
+    btn = Button(window,text="Pencereni baqlamaq",command=lambda :window.destroy())
+    btn.pack()
+
+root = Tk()
+root.title("Birinci pencere")
+root.geometry("600x600")
+
+button = Button(text="Pencere click", command=click)
+button.pack()
+
+root.mainloop()
+
+====================================================================================
+
+
+import tkinter
+import tkinter.messagebox
+
+root = tkinter.Tk()
+root.geometry("500x500")
+
+
+def open_info():
+    tkinter.messagebox.showinfo(title="Info", message="Info message")
+
+
+def open_warning():
+    tkinter.messagebox.showwarning(title="Attention", message="Attention message!")
+
+
+def open_error():
+    tkinter.messagebox.showerror(title="Error", message="Error message")
+
+
+info_button = tkinter.Button(text="Information", command=open_info)
+info_button.pack(anchor="center", expand=1)
+
+warning_button = tkinter.Button(text="Attention", command=open_warning)
+warning_button.pack(anchor="center", expand=1)
+
+error_button = tkinter.Button(text="Error", command=open_error)
+error_button.pack(anchor="center", expand=1)
+
+root.mainloop()
+
+=========================================================================================
+
+
+
+

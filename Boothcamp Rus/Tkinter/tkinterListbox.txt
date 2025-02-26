@@ -1,0 +1,49 @@
+from tkinter import *
+
+def Clic():
+    pass
+
+pencere = Tk()
+pencere.title("Pencere1")
+pencere.geometry("400x400")
+
+siyahi = ["Nazim","Kenan","Djavid","Resul"]
+
+lb = Listbox()
+lb.pack()
+for i in siyahi:
+    if i == "Kenan":
+        i = "Tamerlan"
+        lb.insert(END,i)
+    else:
+        lb.insert(END,i)
+
+
+pencere.mainloop()
+
+==============================================================================================
+
+
+
+from tkinter import *
+
+def Clic():
+    pass
+
+pencere = Tk()
+pencere.title("Pencere1")
+pencere.geometry("400x400")
+
+siyahi = ["Nazim","Kenan","Djavid","Resul"]
+sVar = StringVar(value=siyahi)
+
+lb = Listbox(listvariable=sVar)
+lb.pack()
+lb.delete(2)
+
+
+
+pencere.mainloop()
+
+
+===============================================================================================

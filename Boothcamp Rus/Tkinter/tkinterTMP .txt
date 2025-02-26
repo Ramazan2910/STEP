@@ -1,0 +1,491 @@
+from tkinter import *
+
+root = Tk()
+root.title("Okno1")
+root.geometry("400x400")
+root2 = Tk()
+root2.title("Okno2")
+
+root.geometry("200x200")
+
+btn = Button(root2,text="Buttin").pack()
+
+
+
+root.mainloop()
+
+=========================================================
+
+
+textvariable: устанавливает привязку к элементу StringVar;
+
+from tkinter import *
+
+root = Tk()
+root.title("Okno1")
+root.geometry("400x400")
+
+txt = StringVar()
+lbl = Label(root,textvariable=txt).grid(column=0,row=0)
+entry = Entry(root,textvariable=txt).grid(column=0,row=1)
+btn = Button(root,textvariable=txt).grid(column=0,row=2)
+
+
+root.mainloop()
+
+==============================================================
+
+
+from tkinter import *
+
+root = Tk()
+root.title("Okno1")
+root.geometry("400x400")
+
+l = Listbox()
+l.grid(column=0,row=0)
+l.insert(0,"Tamerlan")
+l.insert(1,"Tam")
+l.delete(0)
+
+# s = l.curselection()
+# l.delete(s[0])
+
+
+
+root.mainloop()
+
+
+===============================================================
+
+from tkinter import *
+
+root = Tk()
+root.title("Okno1")
+root.geometry("400x400")
+
+languages = ["Python", "C#", "Java", "JavaScript"]
+languages_var = StringVar(value=languages)
+
+lb = Listbox(listvariable=languages_var)
+lb.grid(column=0,row=0)
+
+
+
+root.mainloop()
+
+
+==================================================================
+
+from tkinter import *
+
+root = Tk()
+root.title("Okno1")
+root.geometry("200x200")
+
+languages = ["Python", "JavaScript", "C#", "Java", "C++", "Rust", "Kotlin", "Swift",
+             "PHP", "Visual Basic.NET", "F#", "Ruby", "R", "Go", "C",
+             "T-SQL", "PL-SQL", "Typescript", "Assembly", "Fortran"]
+languages_var = StringVar(value=languages)
+
+lb = Listbox(listvariable=languages_var)
+lb.pack(side=LEFT, fill=BOTH, expand=1)
+
+scrollbar = Scrollbar(orient="vertical", command=lb.yview)
+scrollbar.pack(side=RIGHT, fill=Y)
+lb["yscrollcommand"]=scrollbar.set
+
+
+root.mainloop()
+
+======================================================================
+
+from tkinter import *
+
+root = Tk()
+root.title("Okno1")
+root.geometry("200x200")
+
+w = Label(root, text='GeeksForGeeks',font="50")
+w.grid(column=0,row=0)
+
+scroll_bar = Scrollbar(root)
+
+mylist = Listbox(root,yscrollcommand=scroll_bar.set)
+
+for line in range(1, 26):
+    mylist.insert(END, "Geeks " + str(line))
+
+mylist.grid(column=0,row=1)
+scroll_bar.config(command=mylist.yview)
+
+root.mainloop()
+
+=============================================================
+
+
+from tkinter import *
+
+root = Tk()
+root.title("Okno1")
+root.geometry("200x200")
+
+w = Label(root, text='GeeksForGeeks',font="50")
+w.grid(column=0,row=0)
+
+scroll_bar = Scrollbar(root)
+scroll_bar.grid(column=1,row=0,rowspan=2)
+mylist = Listbox(root,yscrollcommand=scroll_bar.set)
+
+for line in range(1, 26):
+    mylist.insert(END, "Geeks " + str(line))
+
+mylist.grid(column=0,row=1)
+scroll_bar.config(command=mylist.yview)
+
+root.mainloop()
+
+==============================================================
+
+
+import tkinter
+from tkinter import *
+
+root = Tk()
+root.title("Okno1")
+root.geometry("200x200")
+
+ls = ["Tom","Rom","Com"]
+lb = Listbox()
+
+for i in ls:
+    lb.insert(END,i)
+
+lb.pack()
+
+root.mainloop()
+
+
+============================================================================
+
+import tkinter
+from tkinter import *
+
+root = Tk()
+root.title("Okno1")
+root.geometry("200x200")
+
+ls = ["Tom","Rom","Com"]
+lb = Listbox()
+
+lb.insert(END,*ls)
+
+lb.pack()
+
+root.mainloop()
+
+===============================================================================
+
+import tkinter
+from tkinter import *
+
+root = Tk()
+root.title("Okno1")
+root.geometry("200x200")
+
+ls = ["Tom","Rom","Com"]
+lb = Listbox()
+lb.insert(END,*ls)
+lb.delete(0)
+
+
+lb.pack()
+
+root.mainloop()
+
+==========================================================================
+
+import tkinter
+from tkinter import *
+
+root = Tk()
+root.title("Okno1")
+root.geometry("200x200")
+
+ls = ["Tom","Rom","Com"]
+sv = StringVar()
+sv.set(ls)
+lb = Listbox(root,listvariable=sv)
+
+
+
+lb.pack()
+
+root.mainloop()
+
+=========================================================================
+
+resizable() - Итак, если пользователь хочет создать окно фиксированного размера, можно использовать этот метод.
+
+
+from tkinter import *
+
+pencere = Tk()
+pencere.title("Test")
+pencere.geometry("400x400")
+pencere.resizable(False,False)
+
+
+
+pencere.mainloop()
+
+
+==========================================================================
+
+
+from tkinter import *
+clicks = 0
+def click_button():
+    global clicks
+    clicks += 1
+    # изменяем текст на кнопке
+    btn["text"] = f"Clicks {clicks}"
+
+pencere = Tk()
+pencere.title("Test")
+pencere.geometry("400x400")
+
+btn = Button(text="Click Me", command=click_button)
+btn.pack()
+
+pencere.mainloop()
+
+
+=========================================================================
+
+Мы можем установить отключенное состояние с помощью метода state(), передав ему значение «отключено». С такой кнопкой пользователь не сможет взаимодействовать:
+
+
+from tkinter import *
+
+pencere = Tk()
+pencere.title("Test")
+pencere.geometry("400x400")
+
+btn = Button(text="Click Me", state=["disabled"])
+btn.pack()
+
+pencere.mainloop()
+
+
+======================================================================
+ 
+expand - Если True, то виджет заполняет все пространство контейнера.
+
+from tkinter import *
+
+pencere = Tk()
+pencere.title("Test")
+pencere.geometry("400x400")
+
+btn = Button(text="Click me")
+btn.pack(expand=True)
+
+pencere.mainloop()
+
+========================================================================
+
+maxsize() - Этот метод используется для установки максимального размера корневого окна (максимальный размер, до которого окно может быть расширено). Пользователь по-прежнему сможет уменьшить размер окна до минимально возможного.
+
+minsize() - Используется для установки минимального размера окна Tkinter. Используя этот метод, пользователь может установить начальный размер окна на минимальный размер и по-прежнему иметь возможность увеличивать и уменьшать масштаб окна.
+
+
+from tkinter import *
+
+pencere = Tk()
+pencere.title("Test")
+pencere.geometry("400x400")
+pencere.minsize(250,250)
+pencere.maxsize(400,400)
+
+btn = Button(text="Click me")
+btn.pack(expand=True)
+
+pencere.mainloop()
+
+
+========================================================================
+
+В этом примере две кнопки расположены внизу фрейма и отделены друг от друга с помощью отступов:
+
+from tkinter import *
+
+pencere = Tk()
+pencere.title("Test")
+pencere.geometry("400x400")
+pencere.minsize(250,250)
+pencere.maxsize(400,400)
+
+button1 = Button(text="LeftButton")
+button1.pack(side = LEFT,padx=10)
+
+button2 = Button(text="button2")
+button2.pack(side = BOTTOM, pady=30)
+
+pencere.mainloop()
+
+
+=========================================================
+
+
+anchor - используется для определения положения текста относительно контрольной точки.
+
+
+from tkinter import *
+
+pencere = Tk()
+pencere.title("Test")
+pencere.geometry("400x400")
+
+
+button = Button(text="button1",width=20, height=2,anchor="n",bg="red")
+button.pack()
+
+button = Button(text="button2",width=20, height=2,anchor="s",bg="yellow")
+button.pack()
+
+button = Button(text="button3",width=20, height=2,anchor="e",bg="blue")
+button.pack()
+
+button = Button(text="button4",width=20, height=2,anchor="w",bg="green")
+button.pack()
+
+button = Button(text="button5",width=20, height=2,anchor="nw",bg="red")
+button.pack()
+
+button = Button(text="button5",width=20, height=2,anchor="ne",bg="red")
+button.pack()
+
+button = Button(text="button5",width=20, height=2,anchor="sw",bg="red")
+button.pack()
+
+button = Button(text="button5",width=20, height=2,anchor="se",bg="red")
+button.pack()
+
+pencere.mainloop()
+
+
+
+===============================================================================
+
+
+from tkinter import *
+
+pencere = Tk()
+pencere.title("Test")
+pencere.geometry("400x400")
+
+
+lbl = Label(text="Label1",width=20, height=2,anchor="n",bg="red")
+lbl.pack()
+
+lbl = Label(text="Label2",width=20, height=2,anchor="e",bg="yellow")
+lbl.pack()
+
+lbl = Label(text="Label3",width=20, height=2,anchor="s",bg="green")
+lbl.pack()
+
+pencere.mainloop()
+
+
+=============================================================================
+
+
+padx və pady параметры позволяют указать отступ виджета от границ контейнера:
+
+
+from tkinter import *
+
+pencere = Tk()
+pencere.title("Test")
+pencere.geometry("400x400")
+
+btn = Button(text="Click me")
+btn.pack(anchor="nw", padx=20, pady=30)
+
+pencere.mainloop()
+
+
+Здесь кнопка перемещена на 20 единиц вправо и на 30 единиц вниз от верхнего левого угла.
+
+============================================================================
+
+ipadx və ipady настройки позволяют установить отступы содержимого виджета по горизонтали и вертикали от границ виджета соответственно.
+
+
+from tkinter import *
+
+pencere = Tk()
+pencere.title("Test")
+pencere.geometry("400x400")
+
+btn = Button(text="Click me",bg="red")
+btn.pack(anchor="nw", ipadx=20, ipady=30)
+
+pencere.mainloop()
+
+
+================================================================================
+
+
+from tkinter import *
+
+pencere = Tk()
+pencere.title("Test")
+pencere.geometry("400x400")
+
+btn = Button(text="Click me",bg="red")
+btn.pack(side=LEFT)
+
+btn = Button(text="Click me",bg="red")
+btn.pack(side=RIGHT)
+
+btn = Button(text="Click me",bg="red")
+btn.pack(side=TOP)
+
+btn = Button(text="Click me",bg="red")
+btn.pack(side=BOTTOM)
+
+pencere.mainloop()
+
+
+==========================================================================
+
+from tkinter import *
+
+pencere = Tk()
+pencere.title("Test")
+pencere.geometry("400x400")
+
+btn = Button(text="Click me Y",bg="red")
+btn.pack(side=LEFT,fill=Y)
+
+btn = Button(text="Click me Y",bg="red")
+btn.pack(side=RIGHT,fill=Y)
+
+btn = Button(text="Click me X",bg="red")
+btn.pack(side=TOP,fill=X)
+
+btn = Button(text="Click me X",bg="red")
+btn.pack(side=BOTTOM,fill=X)
+
+pencere.mainloop()
+
+
+=========================================================================
+
+
+
+
+
+
