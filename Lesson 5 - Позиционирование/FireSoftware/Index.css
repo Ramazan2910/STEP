@@ -1,0 +1,767 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Header */
+
+header{
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    background-color: white;
+    width: 100%;
+    padding: 1% 4% 0 4%;
+    box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.255);
+}
+
+.head_left{
+    display: inline-block;
+}
+
+.head_left img{
+    display: inline-block;
+}
+
+.head_left ul{
+    display: inline-block;
+    position: relative;
+    bottom: 20px;
+}
+
+.head_left ul li{
+    display: inline-block;
+    margin-right: 35px;
+    color: black;
+    font-size: 18px;
+}
+
+.head_left .coopname{
+    font-size: 22px;
+    color: #F04A00;
+    font-weight: 600;
+}
+
+.head_left ul li:hover{
+    color: #F04A00;
+    transition: 0.3s;
+}
+
+
+
+
+.head_right{
+    display: inline-block;
+    position: relative;
+    bottom: 20px;
+    left: 25%;
+}
+
+.language{
+    display: inline-block;
+    margin-right: 50px;
+    font-size: 17px;
+    color: black;
+}
+
+.language img{
+    margin-left: 5px;
+}
+
+.head_but{
+    display: inline-block;
+    background-color: transparent;
+    padding: 10px 30px;
+    border-radius: 15px;
+    font-size: 15px;
+    border: 1px solid grey;
+    transition: 0.5s;
+}
+
+
+.head_but:hover{
+    background-color: #F04A00;
+    transition: 0.5s;
+    color: white;
+    cursor: pointer;
+    scale: 1.2;
+}
+
+/* Main */
+/* Entrance */
+
+
+main{
+    margin-top: 6%;
+}
+
+.entrance{
+    padding-left:  15%;
+    margin-bottom: 6%;
+}
+
+.left_ent{
+    display: inline-block;
+    margin-right: 10%;
+    width: 35%;
+}
+
+.entrance h4{
+    font-size: 15px;
+}
+
+.entrance h1{
+    font-size: 55px;
+}
+
+.entrance .text_ent{
+    margin: 10px 0px 20px 0px;
+}
+
+.ent_start{
+    padding: 12px 30px;
+    border-radius: 13px;
+    font-size: 15px;
+    border: none;
+    background-color: #F04A00;
+    color: white;
+}
+
+.ent_start:hover{
+    background-color: #d14200;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.ent_see{
+    background-color: transparent;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 13px;
+    font-size: 15px;
+    transition: 0.5s;
+
+}
+
+.ent_see:hover{
+    color: #F04A00;
+    cursor: pointer;
+    transition: 0.7s;
+    transform: translate(25%);
+}
+
+.main_numbers{
+    margin-top: 25px;
+}
+
+.main_numbers p {
+    margin-top: 5px;
+    font-size: 20px;
+}
+
+.main_numbers h3 {
+    font-size: 1.8em;
+}
+
+
+.client{
+    display: inline-block;
+    margin-right: 10%;
+}
+
+.startup{
+    display: inline-block;
+    margin-right: 10%;
+}
+
+.product{
+    display: inline-block;
+}
+
+.right_ent{
+    display: inline-block;
+    position: relative;
+    top: 50px;
+}
+
+/* Services */
+
+.services{
+    padding-left:15%;
+    margin-bottom: 15%;
+}
+
+
+.zaq{
+    margin: 5% 0 5% 15%;
+    font-size: 2em;
+}
+
+.ser_karta{
+    display: inline-block;
+    margin-right: 2%;
+    width: 22%;
+    padding: 2.5%;
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    border-radius: 15px;
+    transition: 0.5s;
+}
+
+.ser_karta:hover{
+    transform: translateY(-4%);
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.ser_karta img{
+    margin-left: 5%;
+    width: 90%;
+    height: 90%;
+
+}
+
+.ser_karta p{
+    text-align: center;
+}
+
+.ser_karta h3{
+    text-align: center;
+    margin-bottom: 6%;
+}
+
+/* Sticky */
+
+.main_sticky{
+    background-color: #f8f9fa;
+    padding-top: 8%;
+    padding-bottom: 8%;
+    
+}
+
+.left_sticky{
+    position: sticky;  
+    top: 35%;
+    width: 24%;
+    left: 16%;
+}
+
+.left_sticky h1{
+    margin-bottom: 5%;
+}
+
+.left_sticky p{
+    margin-bottom: 4%;
+}
+
+.left_sticky button{
+    border: none;
+    background-color: #F04A00;
+    padding: 4% 10%;
+    font-size: 17px;
+    border-radius: 25px;
+    color: white;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.left_sticky button:hover{
+    background-color: #d14200;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.right_sticky{
+    width: 28%;
+    position: relative;
+    left: 60%;
+    top: -150px;
+}
+
+.sticky_karta{
+    background-color: white;
+    padding: 8% 15%;
+    border-radius: 15px;
+    border: 1px solid rgba(128, 128, 128, 0.263);
+}
+
+.sticky_karta img{
+   height: 90%; 
+   width: 90%;
+   margin-bottom: 10%;
+}
+
+.sticky_karta h2{
+    font-size: 2em;
+    margin-bottom: 5%;
+}
+
+
+.sticky_karta p{
+    margin-bottom: 10%;
+}
+
+.sticky_karta button{
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    padding: 2% 4%;
+    position: relative;
+    left: -3%;
+    transition: 0.5s;
+    border-radius: 25px;
+}
+
+
+.sticky_karta button:hover{
+    background-color: #f04c00d8;
+    color: white;
+    padding: 2% 4%;
+    transition: 0.5s;
+    cursor: pointer;
+    
+}
+
+/* About Us */
+
+
+.about_us{
+    padding:0% 15% 0% 15%;
+
+}
+
+.first_floar{
+    border: 1px solid #af39034c;
+    height: 365px;
+    width: 1018px;
+    border-radius: 10px;    
+    transition: 0.5s;
+    margin-bottom: 5%;
+}
+
+.first_floar:hover{
+    cursor: pointer;
+    background-color: #F04A00;
+    transition: 0.6s;
+    border: 1px solid transparent;
+    box-shadow: 0px 0px 47px 5px rgba(240, 74, 0, 0.4);
+
+    /* box-shadow: 0px 0px 42px 13px rgba(240, 74, 0, 0.23); */
+
+    .first_img img{
+        transform: scale(1.25);
+        transition: 0.8s;
+    }
+
+    .first_text h4,h2,p,button{
+        color: white;
+        transition: 0.4s;
+    }
+
+    .first_text button{
+        transform: translateX(20px);
+        transition: 0.5s;
+        cursor: pointer;
+    }
+    
+}
+
+.first_text{
+    display: inline-block;
+    width: 33%;
+    position: relative;
+    bottom: 142px;
+    padding:0% 2% 1% 4.18%;
+    margin-right: 1.18%;
+}   
+
+.first_text h4{
+    margin-bottom: 3%;
+    color: #F04A00;
+}
+
+.first_text h2{
+    margin-bottom: 5%;
+}
+
+.first_text button{
+    position: relative;
+    top: 110px;
+    background-color: transparent;
+    color: #F04A00;
+    border: none;
+    font-weight: 600;
+    transition: 0.4s;
+}
+
+.first_img{
+    display: inline-block;
+    width: 603px;
+    height: 365px;
+    overflow: hidden;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.first_img img{
+    width: 605px;
+    height: 365px;
+    transition: 0.5s;
+}
+
+.second_floar{
+    margin-bottom: 15%;
+}
+
+.second_karta{
+    width: 300px;
+    display: inline-block;
+    border: 1px solid #af39034c;
+    border-radius: 10px;
+}
+
+.second_karta:hover{
+    cursor: pointer;
+    background-color: #F04A00;
+    transition: 0.6s;
+    border: 1px solid transparent;
+    box-shadow: 9px 9px 17px -4px rgba(240, 74, 0, 0.6);
+
+    .second_img img{
+        transform: scale(1.25);
+        transition: 0.8s;
+    }
+
+    .second_text h4,h2,p,button{
+        color: white;
+        transition: 0.4s;
+    }
+
+    .second_text button{
+        transform: translateX(10px);
+        transition: 0.5s;
+        cursor: pointer;
+    }
+}
+
+.second_text{
+    padding: 7% 10% 7% 10% ;
+}
+
+.second_text h4{
+    margin-bottom: 5%;
+    color: #F04A00;
+}
+
+.second_text h2{
+    margin-bottom: 23%;
+    
+}
+
+.second_text button{
+    background-color: transparent;
+    color: #F04A00;
+    border: none;
+    font-weight: 600;
+    transition: 0.4s;
+}
+
+.second_img{
+    overflow: hidden;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.second_img img{
+    width: 300px;
+    height: 199px;
+    transition: 0.5s;
+}
+
+/* FAQ */
+
+.faq{
+    padding: 0% 20% 0% 23%;
+    margin-bottom: 8%;
+}
+
+.faq_name{
+    width: 24%;
+    display: inline-block;
+    position: relative;
+    bottom: 600px;
+    margin-right: 10%;
+    
+}
+
+.faq_icon{
+    border-radius: 50px;
+    background-color: #F04A00;
+    width: 18%;
+    font-size: 0.8em;
+    padding: 2% 3% 2% 4%;
+    color: white;
+    
+}
+
+.faq_word{
+    font-size: 3em;
+}
+
+.faq_ques{
+    display: inline-block;
+}
+
+.faq_strelka{
+    display: inline-block;
+    margin-left: 10%;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 1% 3% 1.5% 3.2%;
+    border-radius: 50px;
+    border: 1px solid rgba(128, 128, 128, 0.263);
+    position: relative;
+    transition: 0.5s;
+}
+
+.question{
+    border: 1px solid rgba(128, 128, 128, 0.263);
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    padding:5% 5% ;
+    width: 120%;
+    margin-bottom: 5%;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.question:hover{
+    background-color: #F04A00;
+    color: white;
+    transition: 0.8s;
+    cursor: pointer;
+    
+    .faq_strelka{
+        transform: rotate(90deg);
+        color: white;
+        transition: 0.5s;
+    }
+}
+
+/* Footer */
+
+.top_foot{
+    width: 100%;
+    height: 400px;
+}
+
+.left_but_foot{
+    display: inline-block;
+    width: 50%;
+    height: 400px;
+    background-color: #F04A00;
+    float: left;
+}
+
+.left_but_foot_text{
+    padding: 9% 5% 5% 23%;
+    color: white;
+}
+
+.left_but_foot_text h1{
+    font-size: 2.5em;
+    margin-top: 3%;
+    margin-bottom: 14%;
+}
+
+.left_but_foot_text button{
+    border: none;
+    background-color: rgb(229, 229, 229);
+    padding: 3% 5%;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1em;
+    transition: 0.5s;
+
+}
+
+.left_but_foot_text button:hover{
+    cursor: pointer;
+    background-color: #ffffff;
+    transition: 0.5s;
+}
+
+.right_but_foot{
+    display: inline-block;
+    position: relative;
+    float: right;
+    width: 50%;
+    height: 400px;
+    background-color: #ff702da6;
+    /* background-color: #ff5100a6; */
+}
+
+.right_but_foot_text{
+    padding: 9% 0% 5% 10%;
+}
+
+.right_but_foot_text h1{
+    font-size: 2.5em;
+    margin-top: 3%;
+    margin-bottom: 10%;
+}
+
+.right_but_foot_text button{
+    border: none;
+    background-color: rgb(255, 255, 255);
+    padding: 2.5% 4.5%;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1em;
+    transition: 0.5s;
+}
+
+
+.right_but_foot_text button:hover{
+    cursor: pointer;
+    background-color: #F04A00;
+    color: white;
+    transition: 0.5s;
+}
+
+.bot_foot{
+    background-color: #f8f9fa;
+    width: 100%;
+}
+
+.bot_foot_top{
+    padding: 4% 9% 4% 15%;
+}
+
+.column{
+    width: 22%;
+    margin-right: 2.7%;
+    display: inline-block;
+}
+
+.inside_column{
+    margin-bottom: 20%;
+}
+
+.inside_column h3{
+    margin-bottom: 8%;
+    color: #F04A00;
+}
+
+
+.inside_column h4{
+    margin-bottom: 8%;
+    color: rgb(113, 113, 113);
+    transition: 0.3s;
+}
+
+.inside_column h4:hover{
+    color: #F04A00;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.under_row{
+    margin-bottom: 6%;
+    color: rgb(113, 113, 113);
+    transition: 0.5s;
+}
+
+.under_row:hover{
+    transform: translateX(15px);
+    color: #F04A00;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.line{
+    width: 75%;
+    margin-left: 12.5%;
+}
+
+
+.bot_foot_bot{
+    padding: 4% 9% 5% 15%;
+
+}
+
+.left_bot_foot_bot{
+    display: inline-block;
+}
+
+.left_bot_foot_bot img,p{
+    display: inline-block;
+}
+
+.coopname1{
+    font-size: 22px;
+    color: #F04A00;
+    font-weight: 600;
+    position: relative;
+    bottom: 22px;
+}
+
+.right_bot_foot_bot{
+    width: 30%;
+    display: inline-block;
+    position: relative;
+    left: 53%;
+}
+
+.right_bot_foot_bot img:hover{
+    cursor: pointer;
+}
+
+.bot_logo{
+    width: 35px;
+    height: 35px;
+    margin-right: 5%;
+    
+}
+
+
+.privacy{
+    position: relative;
+    left: 66%;
+    margin-top: 5%;
+    width: 33%;
+}
+
+.privacy h4{
+    position: relative;
+    left: 18%;
+    margin-bottom: 10%;
+    color: rgb(113, 113, 113);
+    transition: 0.3s;
+}
+
+.privacy h4:hover{
+    color: #F04A00;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+
+.foot_spark {
+    position: relative;
+    right: 10%;;
+    width: 100%;
+    color: rgb(113, 113, 113);
+}
+
+.foot_spark p{
+    transition: 0.3s;
+}
+
+.foot_spark img{
+    margin: 0% 5%;
+}
+
+.foot_spark p:hover{
+    color: #F04A00;
+    transition: 0.3s;
+    cursor: pointer;
+}

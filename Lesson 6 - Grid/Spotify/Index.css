@@ -1,0 +1,436 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.size_logo{
+  width: 28px;
+  height: 28px;
+}
+
+
+/* Внешниий контейнер */
+
+
+.grid_container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: 
+  'lefttop main main main'
+  'leftbot main main main';
+  grid-template-columns: 23% auto;
+  grid-template-rows: 10.3vw 36.4vw;
+  gap: 8px;
+  background-color: #000000;
+  padding: 8px 10px; 
+}
+
+
+.grid_container .nav{
+  grid-area:lefttop ;
+  border-radius: 7px;
+  background-color: #121212;
+  color: white;
+  padding: 5%;
+}
+
+.nav div img,p{
+  display: inline-block;
+}
+
+.nav_but{
+  margin-bottom: 4.5%;
+}
+
+.nav_but a{
+  text-decoration: none;
+}
+
+.nav_but p{
+  position: relative;
+  bottom:0.5vw;
+  left: 5%;
+  color: #b3b3b3;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.nav_but p:hover{
+  color: white;
+  
+}
+
+
+
+
+
+
+
+
+.grid_container .library{
+  grid-area:leftbot ;
+  border-radius: 7px;
+  background-color: #121212;
+  color: white;
+  padding: 2%;
+}
+
+ .add_library{
+  padding: 5% 5% 0% 5%;
+}
+
+.add_library p{
+  position: relative;
+  bottom:0.5vw;
+  left: 5%;
+  margin-right: 38%;
+  color: #b3b3b3;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+
+.add_library p:hover{
+  color: white;
+  
+}
+
+.create{
+  background-color: #242424;
+  margin: 5% 0%;
+  padding: 5%;
+  border-radius: 10px;
+}
+
+.create h3{
+  font-size: 1.1em;
+  margin-bottom: 5%;
+}
+
+.create h4{
+  margin-bottom: 5%;
+}
+
+.create button{
+  padding: 2% 5%;
+  background-color: white;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.create button:hover{
+  transform: scale(1.05);
+}
+
+.lib_law{
+  padding: 3% 5% 1% 5%;
+}
+
+.lib_law p{
+  color: #b3b3b3;
+  font-size: 0.8em;
+  margin-bottom: 2%;
+  cursor: pointer;
+}
+
+.margin_law{
+  margin-right: 5%;
+}
+
+.block_law{
+  display: block;
+  margin-top: 1%;
+}
+
+.language{
+  border: 0.01em solid #b3b3b3;
+  background-color: transparent;
+  color: white;
+  padding: 1% 6% 1% 4%;
+  margin: 2% 0% 2% 5%;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.language:hover{
+  border: 0.01em solid white;
+  transform: scale(1.1);
+}
+
+.language p{
+  position: relative;
+  bottom: 0.28vw;
+  left: 5%;
+}
+
+
+/* Внутренний контейнер  */
+
+.inside_container{
+  grid-area: main;
+  display: grid;
+  /* grid-template-rows: 9% 92%; */
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+.inside_container .LogIn{
+  color: white;
+  background-color: #101010;
+
+}
+
+.size_arrow{
+  width: 28px;
+  height: 25px;
+}
+
+.arrows{
+  display: inline-block;
+  margin: 1.5%;
+  width: 6%;
+}
+
+.arrow{
+  background-color: #0a0a0a; 
+  display: inline-block; 
+  border-radius: 50px;
+  cursor: pointer;
+  margin-right: 5%;
+}
+
+.left_arrow{
+  position: relative; 
+  right: 12%; 
+  top: 2px;
+  
+}
+
+.right_arrow{
+  position: relative;  
+  top: 2px;
+}
+
+.reg_but{
+  display: inline-block;
+  position: relative;
+  bottom: 8%;
+  left: 60%;
+  width: 30%;
+}
+
+.left_reg_but{
+  border: none;
+  background-color: transparent;
+  color: #b3b3b3;
+  font-size: 1em;
+  padding: 2%;
+  cursor: pointer;
+  transition: 0.5s;
+  font-weight: 600;
+  margin-right: 7%;
+}
+
+.left_reg_but:hover{
+  transform: scale(1.05);
+  color: white;
+}
+
+.right_reg_but{
+  padding: 4.5% 9%;
+  background-color: white;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.right_reg_but:hover{
+  transform: scale(1.05);
+}
+
+
+
+/* Main */
+
+.inside_container .mainSpace{
+  overflow-y: scroll;
+  background-color: #1e1e1e;
+  color: white;
+  padding: 2% 1.8%;
+}
+
+.podzaq{
+  display: inline;
+}
+
+.podzaq:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.show_all{
+  float: right;
+  color: #b3b3b3;
+  position: relative;
+  top: 0.8%;
+}
+
+.show_all:hover{
+  
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.singers{
+  margin-top: 2%;
+  margin-bottom: 4%;
+}
+
+.singer{
+  display: inline-block;
+  padding: 1% 0.8%;
+  cursor: pointer;
+  border-radius: 7px;
+}
+
+.singer:hover{
+  background: linear-gradient(#1E1E1E, #202020, #222222, #232323,#252525,#272727);
+}
+
+
+.singer img{
+  border-radius: 120px;
+  height: 140px;
+  width: 135px;
+}
+
+.singer h4{
+  margin-top: 5%;
+
+}
+
+.singer p{
+  color: #b3b3b3;
+  margin-top: 5%;
+}
+
+
+
+
+
+
+.album{
+  display: inline-block;
+  padding: 1% 0.85%;
+  cursor: pointer;
+  border-radius: 7px;
+}
+
+.album:hover{
+  background: linear-gradient(#252525,#272727);
+}
+
+.album img{
+  border-radius: 7px;
+  height: 140px;
+  width: 135px;
+}
+
+.album h4{
+  margin-top: 5%;
+
+}
+
+.album p{
+  color: #b3b3b3;
+  margin-top: 5%;
+}
+
+
+.foot_container{
+  display: grid;
+  grid-template-columns: repeat(5, 15%);
+  grid-template-rows: 18vw;
+  column-gap:4%;
+}
+
+.foot_container .foot_niz{
+  margin-bottom: 5%;
+  color: #b3b3b3;
+  cursor: pointer;
+}
+
+.foot_container .foot_niz:hover{
+  color: white;
+  text-decoration: underline;
+}
+
+.foot_zaq{
+  color: white;
+  margin-bottom: 5%;
+}
+
+.foot1{
+  grid-column: 1/2;
+  font-size: 15px;
+}
+
+.foot2{
+  grid-column: 2/3;
+}
+
+.foot3{
+  grid-column: 3/4;
+}
+
+.foot4{
+  grid-column: 4/5;
+}
+
+.foot5{
+  grid-column: 5/7;
+  margin-left: 35%;
+}
+
+
+.sot{
+  width: 40px;
+  height: 40px;
+  background-color: #292929;
+  margin-right: 5%;
+  border-radius: 50px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.foot_logo{
+  height: 23px;
+  width: 23px;
+  position: relative;
+  top: 20%;
+  left: 22%;
+}
+
+.sot:hover{
+  background-color: #454545;
+
+}
+
+.line{
+  opacity: 0.3;
+}
+
+.law{
+  color: #b3b3b3;
+  margin: 5% 0% 5% 0%;
+}
+

@@ -1,0 +1,424 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Начало Header */
+
+header{
+    margin-bottom: 50px;
+}
+
+.headLeft{
+    display: inline-block;
+    background-color: black;
+
+}
+
+.headLeft img{
+    width: 350px;
+    height: 45px;
+    margin: 32px 150px 28px 120px;
+}
+
+.headRight{
+    display: inline-block;
+}
+
+.headRight .rightTop{
+    background-color: white;
+    margin-left: -3.8px;
+}
+
+.headRight .rightTop .nav1{
+    margin-left: 50px;
+}
+
+.nav1{
+    display: inline-block;
+}
+
+.headlan{
+    display: inline-block;
+}
+
+.headRight .rightTop .nav1 li{
+    display: inline-block;
+    margin: 15px 70px 15px 0px;
+    font-size: 18px;
+    color: grey;
+    font-weight: 600;
+}
+
+.headRight .rightTop .headlan li{
+    display: inline-block;
+    margin: 15px 6px 15px 0px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.headRight .rightTop .nav1 li:hover{
+    color: black;
+}
+
+.headlogo{
+    height: 16px;
+    width: 16px;
+}
+
+
+
+.headRight .rightBottom{
+    width: 899px;
+    background-color: #f39c1b;
+    margin-left: -3.8px;
+}
+
+.headRight .rightBottom .nav2{
+    margin-left: 50px;
+}
+
+.nav2{
+    display: inline-block;
+}
+
+.headnum{
+    display: inline-block;
+}
+
+.headRight .rightBottom .nav2 li{
+    display: inline-block;
+    margin: 15px 60px 0px 0px;
+    font-size: 18px;
+    color: white;
+    font-weight: 600;
+}
+
+.headRight .rightBottom .headnum li{
+    display: inline-block;
+    margin: 15px 0px 0px 0px;
+    font-size: 14px;
+    color: white;
+    font-weight: 600;
+}
+
+.headRight .rightBottom .nav2 li:hover{
+    background-color: black;
+}
+
+.headlogo2{
+    height: 19px;
+    width: 19px;
+}
+
+/* Конец Header */
+
+
+/* Начало MAIN */
+
+.vrema{
+    margin: 0px 0px 0px 550px;
+}
+
+.vremaostal {
+    display: inline-block;
+    padding: 13px ;
+    background-color: white;
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.vremaseq{
+    display: inline-block;
+    padding: 15px 20px;
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 4px;
+}
+
+.spiski{
+    background-color: black;
+    margin-bottom: 50px;
+}
+
+.spiski ul{
+    margin: -2px 0px 0px 400px;
+    padding: 25px ; 
+}
+
+.spiski ul li{
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: white;
+    color: black;
+    margin-right: 45px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.spiskilogo{
+    width: 10px;
+    height: 10px;
+}
+
+/* Начало карт */
+
+.block{
+    margin: 0px 0px 40px 200px; 
+}
+
+.karta{
+    width: 262px;
+    display: inline-block;
+    margin-right: 30px;
+    
+}
+
+.headKarta{
+    height: 52.4px;
+    background-color: #f3f3f3;
+    padding: 10px 0px 0px 0px;
+    text-align: center;
+    font-size: 17px;
+    transition: 0.7s;
+
+}
+
+.fotoWrap{
+    overflow: hidden;
+
+}
+
+.fotoWrap img{
+    transition: 0.7s;
+}
+
+.karta:hover{
+    cursor: pointer;
+    transition: 0.5s;
+    .headKarta{
+        background-color: #000000;
+        color: white;
+        transition: 0.5s;
+    }
+
+    .fotoWrap img{
+        transform: scale(1.2);
+        transition: 1s;
+    }
+
+    .age{
+        background-color: #fbfbfb;
+        transition: 0.5s;
+
+    }
+}
+
+.category{
+    text-align: center;
+}
+
+.kartalogo{
+    height: 45px;
+    width: 49px;
+}
+
+.age{
+    background-color: #f3f3f3;
+    padding: 20px 0px 20px 65px;
+    transition: 0.5s;
+}
+
+.black{
+    display: inline-block;
+    background-color: black;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    padding: 10px 20px;
+    margin-right: 35px;
+}
+
+.red{
+    display: inline-block;
+    background-color: #d0021b;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    padding: 10px 6px 10px 6px;
+}
+
+/* Sale */
+
+.saleBottom{
+    margin-top: 90px;
+    margin-bottom: 40px;
+}
+
+.saleBottom img{
+    width: 100%;
+}
+
+/* Новости */
+
+.headNovosti{
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    width: 289px;
+    padding: 15px;
+    text-align: center;
+    margin-left: 575px;
+    border-radius: 5px;
+}
+
+.novosti{
+    margin-top: -5px;
+    background-color: black;
+    height: 700px;
+}
+
+.novKarti{
+    padding: 40px 0px 0px 180px;
+}
+
+.nizKart{
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.nizFoto img{
+    width: 263px;
+    height: 138px;
+}
+
+.bot{
+    margin-bottom: 10px;
+}
+
+.nizText{
+    color: white;
+    width: 263px;
+}
+
+.nizText p{
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.vse{
+    display: inline-block;
+    margin: 150px 0px 0px 680px;
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.vse:hover{
+    text-decoration: none;
+}
+
+/* Footer */
+
+/* Top foot */
+footer{
+    background-color: #f39c1b;
+    padding: 20px 0px 20px 180px;
+}
+
+.topLeft{
+    display: inline-block;
+}
+
+.topLeft ul{
+    display: inline-block;
+    list-style-type: none;
+    margin-right: 120px;
+}
+
+.topLeft ul li{
+    color: white;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.stick{
+    display: inline-block;
+    border-right: 1px solid white;
+    height: 70px;
+    width: 1px;
+}
+
+.topMid{
+    display: inline-block;
+    margin: 0px 80px 0px 80px;
+}
+
+.topMid img{
+    margin-right: 10px;
+}
+
+.nizlogo{
+    width: 40px;
+    height: 40px;
+}
+
+.topRig{
+    display: inline-block;
+    margin: 0px 80px 0px 80px;
+}
+
+.logoNik1{
+    width: 117px;
+    height: 43px;
+    margin-right: 20px;
+}
+
+.logoNik2{
+    width: 143px;
+    height: 43px;
+}
+
+/* Bottom foot */
+
+.stick1{
+    border-top: 1px solid white;
+    height: 1px;
+    width: 1180px;
+    margin: 20px 0px 10px 0px;
+}
+
+.leftbot{
+    display: inline-block;
+    margin-right: 642px;
+}
+
+.rigbot{
+    display: inline-block;
+}
+
+.leftbot h4{
+    color: white;
+    margin-bottom: 5px;
+}
+
+.nizunder{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.nizunder:hover{
+    text-decoration: none;
+}
+
+
+.rigbot img{
+    height: 50px;
+    width: 133px;
+}

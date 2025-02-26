@@ -1,0 +1,513 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Начало хедера */
+.headsale{
+    background-color:#cd3f42;
+    padding: 2px 0px 7px 100px;
+}
+
+.headsale h2, .headbutton{
+    display: inline-block;
+    
+}
+
+.headsale h2{
+    color: white;
+    margin-right: 650px;
+}
+
+.headbutton{ 
+    background-color: white;
+    border-radius: 20px;
+    padding: 8px 15px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* Середина хедера */
+
+.headlan{
+    padding: 8px 30px 8px 60px;
+}
+
+.headlan ul li{
+    display: inline-block;
+    margin-right: 25px;
+    color: grey ;
+}
+
+.language{
+    float: right;
+}
+
+
+/* Низ хедера */
+
+.headniz{
+    background-color: black;
+    padding: 10px 0px 10px 60px;
+
+}
+
+.leftniz img,.leftniz ul,.leftniz li,.leftniz{
+    display: inline-block;
+}
+
+.leftniz li{
+    color: white;
+    margin-right: 5px;
+}
+
+.leftniz ul li img{
+    width: 20px;
+    height: 20px;
+}
+
+.headlogo{
+    width: 163px;
+    height: 40px;
+    margin-right: 15px;
+}
+
+.rightniz{
+    display: inline-block;
+    margin-left: 180px;
+}   
+
+.rightniz img, .rightniz div{
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.polosa{
+    border: 0.5px solid white;
+    height: 30px;
+}
+
+.logo{
+    height: 26px;
+    width: 26px;
+}
+
+/* Конец хедера */
+
+/* Начало мейна */
+
+.mainfoto{
+    width: 1188px; 
+    height: 588px;
+    margin: 0px 0px 20px 170px;
+}
+
+.headline{
+    margin-bottom: 70px;
+}
+
+.head_product, .head_product img, .head_product .head_product_text{
+    display: inline-block;
+}
+
+.head_product{
+    background-color: #f6f6f6;
+    width: 497px;
+    height: 120px;
+    
+}
+
+.zaqolovok{
+    margin: 0px 0px 20px 70px
+}
+
+
+.product_karti{
+    margin-bottom: 35px;
+}
+
+.leftside{
+    display: inline-block;
+    height: 300px;
+    width: 214px;
+    background-color: #f6f6f6;
+    margin: 0px 20px 0px 70px
+}
+
+.leftside ul{
+    padding: 36px 0px 0px 20px;
+    list-style-type: none;
+}
+
+.leftside li{
+    padding: 10px;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.rightside{
+    display: inline-block;
+}
+
+
+.karta{
+    display: inline-block;
+    width: 214px;
+    padding: 0px 10px 0px 10px;
+}
+
+.kartahead div,.kartahead img{
+    display: inline-block;
+    
+}
+
+.kartahead{
+    text-align: center;
+}
+
+.kartasale{
+    background-color: #fee4e2;
+    color: #cd3f42;
+    padding: 2px 5px;
+    font-size: 12px;
+    border-radius: 12px;
+    margin-right: 60px;
+
+}
+
+.kartaicon{
+    width: 20px;
+    height: 20px;
+}
+
+.kartamid{
+    text-align: center;
+}
+
+.kartamid img{
+    width: 140px;
+    height: 130px;
+}
+
+.kartamid p{
+    font-size: 14px;
+}
+
+.kartaniz{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.kartaniz h4,.kartaniz p{
+    display: inline-block;
+}   
+
+.kartaniz p{
+    font-size: 13px;
+    margin-left: 5px;
+}
+
+.kartaniz h3{
+    color: #0a84ff;
+    font-weight: 300;
+    margin-top: 10px;
+}
+
+
+.mainbox{
+    margin: 0px 60px 90px 55px;
+}
+
+.leftbox{
+    display: inline-block;
+    height: 692px;
+    width: 463px;
+    background-color: #f6f6f6;
+    border-radius: 40px;
+    margin-right: 10px;
+}
+
+.boxfoto1{
+    height: 494px;
+    width: 405px;
+    padding: 55px 0px 0px 30px;
+}
+
+.textbox{
+    padding: 25px 0px 0px 30px;
+}
+
+.textbox h3{
+    color: #0a84ff;
+    margin-top: 5px;
+}
+
+
+.rightbox{
+    display: inline-block;
+    height: 692px;
+}
+
+
+.bottombox{
+    margin-top: 10px;
+}
+
+.macbox, .ipadbox{
+    display: inline-block;
+    background-color: #f6f6f6;
+    border-radius: 40px;
+}
+
+.macbox{
+    margin-right: 10px;
+}
+
+.boxfoto2{
+    width: 478px; 
+    height: 280px;
+    padding: 0px 75px 0px 75px;
+
+}
+
+.boxfoto3{
+    width: 220px;
+    padding: 50px 30px 10px 30px;
+}
+
+
+.watchbox{
+    display: inline-block;
+    background-color: #f6f6f6;
+    border-radius: 40px;
+    height: 325px;
+    width:220px;
+}
+
+.boxfoto4{
+    width: 110px;
+    padding: 30px 0px 0px 60px;
+
+}
+
+.charge{
+    display: inline-block;
+    background-color: #f6f6f6;
+    border-radius: 40px;
+    margin-left: 10px;
+    height: 325px;
+    width: 395px;
+    margin-right: 10px;
+}
+
+.boxfoto5{
+    width: 280px;
+    height: 120px;
+    padding: 50px 30px 10px 60px;
+
+}
+
+.appletv{
+    display: inline-block;
+    background-color: #f6f6f6;
+    border-radius: 40px;
+    height: 322px;
+    width: 280px;
+}
+
+.boxfoto6{
+    width: 180px;
+    padding: 0px 0px 0px 40px;
+}
+
+.objects{
+    margin: 0px 0px 10px 180px;
+}
+
+.object{
+    display: inline-block;
+    width: 205px;
+    height: 214px;
+    background-color: #f6f6f6;
+    border-radius: 40px;
+    text-align: center;
+    padding: 40px 40px 0px 40px;
+    margin-right: 15px;
+}
+
+.object img{
+    margin-bottom: 10px;
+}
+
+.object h3{
+    color: #0a84ff;
+    margin-bottom: 15px;
+}
+
+.maintext{
+    margin: 30px 0px 20px 180px;
+}
+
+.maintext img, .maintext .itext{
+    display: inline-block;
+}
+
+.maintextfoto{
+    height: 155px;
+    padding: 0px 0px 100px 50px;
+}
+
+.itext{
+    width: 908px;
+    height: 356px;
+    margin-left: 180px;
+}
+
+.layers{
+    display: inline-block;
+    margin: 0px 0px 45px 70px
+}
+
+.lay1{
+    margin-bottom: 10px;
+}
+.block{
+    display: inline-block;
+    height: 150px;
+    width: 335px;
+    background-color: #f6f6f6;
+    text-align: center;
+    padding: 40px 0px 0px 0px;
+    margin-right: 5px;
+}
+
+.block img{
+    margin-bottom: 10px;
+}
+
+.laylogo{
+    width: 32px;
+    height: 32px;
+}
+
+.block1{
+    display: inline-block;
+    height: 150px;
+    width: 449.5px;
+    background-color: #f6f6f6;
+    text-align: center;
+    padding: 40px 0px 0px 0px;
+    margin-right: 5px;
+}
+
+.maincontact{
+    height: 622px;
+    padding: 30px 0px 0px 60px;
+    background-color: #f6f6f6;
+}
+
+.leftcontacts{
+    display: inline-block;
+    width: 400px;
+    height: 130px;
+    padding-right: 15px;
+}
+
+.polosamid{
+    display: inline-block;
+    border: 0.5px solid rgba(192, 192, 192, 0.519);
+    width: 0px;
+    height: 420px;
+}
+
+.contrig{
+    display: inline-block;
+    margin: 0px 150px 0px 40px; 
+}
+
+.rightcontacts{
+    display: inline-block;
+    
+}
+
+.contlef{
+    display: inline-block;
+}
+
+.mail img, .mail p, .butcont{
+    display: inline-block;
+}
+
+.mail img{
+    width: 25px;
+    height: 25px;
+}
+
+.mail p{
+    color: #0a84ff;
+    font-weight: 400;
+    text-decoration: underline;
+}
+
+.butcont{
+    margin-left: 310px;
+    padding: 15px 78px;
+    background-color: #0a84ff;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 50px;
+}
+
+.footer{
+    height: 868px;
+    background-color: #1d1d1f;
+}
+
+.sotseti{
+    padding: 44px 0px 44px 60px;
+}
+
+.sotseti img{
+    display: inline-block;
+}
+
+.footlogo{
+    height: 30px;
+    width: 30px;
+    margin-right: 15px;
+}
+
+.stroka{
+    width: 1400px;
+    margin-left: 50px;
+}
+
+.lanfoot{
+    color: white;
+    padding: 20px 0px 30px 55px;
+    font-weight: 400;
+}
+.modeli{
+    height: 526px;
+}
+.model{
+    display: inline-block;
+    height: 495px;
+    width: 130px;
+    color: white;
+    padding: 0px 0px 0px 55px;
+    font-weight: 400;
+}
+
+.model p{
+    margin-bottom: 20px;
+}
+
+.foottext{
+    text-align: center;
+    padding: 20px 0px 0px 50px;
+    width: 1384px;
+    color: grey;
+    font-size: 18px;
+}

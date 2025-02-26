@@ -1,0 +1,374 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* Верх  хедера*/
+.headAdv{
+    background-color: #333333;
+    text-align:center;
+    padding: 10px;
+}
+
+/* Центр  хедера*/
+.center{
+    display: flex;
+    background-color:#f4f4f4;
+    height: 110px;
+}
+.centerleft{
+    display: flex;
+    position: relative;
+    left: 220px;
+    top: 10px;
+    height: 100px;
+}
+
+.daynews{
+    display: flex;
+    position: relative;
+    margin-left: 20px;
+    top: 20px;
+    height: 64px;
+}
+.daynews img{
+    width: 90px;
+    height: 64px;
+}
+.textday{
+    height: 54px;
+    padding: 5px;
+    background-color: white;
+    font-size: 14px;
+}
+
+.textday h4{
+    color: #9c1300;
+}
+
+.centerright{
+    display:flex;
+    position: relative;
+    left: 500px;
+    top: 10px;
+    top: 15px;
+    height: 90px;
+}
+.centerright .valuta h4{
+    margin-bottom: 10px;
+    color: #9c1300;
+}
+
+.centerright .sotseti {
+    margin:20px 15px;
+}
+
+.centerright .sotseti img{
+    margin-right:4px ;
+}
+
+.sotlogo{
+    height: 25px;
+    width: 25px;
+}
+
+/* Низ  хедера*/
+
+.bot-wrap{
+    display: flex;
+    position: relative;
+    margin-left: 220px;
+    padding-top: px;
+}
+.bottom {
+    background-color: #9c1300;
+    height: 40px
+}
+.webname a h2 {
+    color:white;
+    padding-top:5px;
+}
+.webname a {
+    text-decoration: none;
+}
+
+.naviqator{
+    display: flex;
+    margin-left: 50px;
+    padding-top: 0px;
+    gap: 40px;
+}
+
+.naviqator div span{
+    color: white;
+    font-weight: 800;
+    font-size: 12px;
+}
+.naviqator div {
+    height: 20px;
+    padding: 10px;
+}
+
+.naviqator div:hover{
+    background-color: #7c0e00;
+    cursor: pointer;
+}
+
+/* Начало маин */
+/* Начало левой части маина */
+.main{
+    background-color: #f4f4f4;
+    display: flex;
+}
+.mainleft{
+    position: relative;
+    left: 220px;
+    width: 850px;
+}
+
+.leftimg1 img{
+    display: block;
+    width: 850px;
+    height: 80px;
+    padding: 10px 0px;
+}
+.news1 h2{
+    color: #9c1300;
+    font-size: 29px;
+    margin-bottom: 10px;
+}
+.actnews1{
+    display: flex;
+    background-color: white;
+}
+
+.actnews1 img{
+    width: 480px;
+    height: 362px;
+}
+
+.textnews1 h1{
+    font-size: 30px;
+    padding:15px;
+    text-decoration: underline;
+}
+
+.textnews1 h1:hover{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.textnews1 .video1{
+    position: relative;
+    color: white; 
+    background-color: #9c1300;
+    font-size: 14px; 
+    padding: 2px 5px; 
+    border-radius: 3px;
+    text-decoration: none;
+    float: right;
+    right: 75px;
+    top: -40px;
+    font-weight: 700;
+}
+
+.textnews1 div:hover{
+    cursor: pointer;
+}
+
+.viewers{
+    display: flex;
+    color: #999999;
+    margin: 15px;
+    font-weight: 700;
+}
+.viewers img{
+    margin: 2px 5px 0px 245px;
+    width: 15px;
+    height: 15px; 
+    opacity: 0.5;
+}
+
+.leftimg2 img{
+    width: 850px;
+    height: 160px;
+    padding: 20px 0px 10px  0px;
+}
+
+.newskarti{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.kartfoto{
+    width: 261px;
+    height: 195px;
+}
+
+.textkart{
+    width: 261px; 
+    background-color: white;
+    margin-top:-3px;
+}
+.textkart h4{
+    padding:5px 0px 0px 10px;
+    text-decoration: underline;
+}
+.textkart h4:hover{
+    text-decoration: none;
+    cursor: pointer;
+}   
+.viewers1{
+    display: flex;
+    color: #999999;
+    margin-top: 50px;
+    padding: 0px 0px 5px 10px;
+}
+
+.viewers1 img {
+    margin: 1px 5px 0px 150px;
+    width: 15px;
+    height: 15px; 
+    opacity: 0.5;
+}
+
+.textkart .kartvideo{
+    display:inline-block;
+    position: relative;
+    color: white; 
+    background-color: #9c1300;
+    font-size: 14px; 
+    padding: 2px 5px; 
+    border-radius: 3px;
+    text-decoration: none;
+    top: 5px;
+    left: 10px;
+    font-weight: 600;
+}
+
+
+.textkart .kartvideo:hover{
+    cursor: pointer;
+}
+
+.leftimg3 img{
+    width: 850px;
+    height: 215px;
+    padding: 18px 0px 18px  0px;
+}
+
+.video2 {
+    display:inline-block;
+    position: relative;
+    color: white; 
+    background-color: #9c1300;
+    font-size: 14px; 
+    padding: 2px 5px; 
+    border-radius: 3px;
+    text-decoration: none;
+    top: -5px;
+    left: 13px;
+    font-weight: 600;
+}
+
+.podzaq{
+    position: relative; 
+    bottom: 199px; 
+    color: #9c1300; 
+    height:20px; 
+    width: 63px; 
+    background-color: white; 
+    opacity: 0.7; 
+    text-align: center; 
+    font-weight: 800;
+}
+
+/* Начало правой части маина */
+
+.mainright{
+    position: relative;
+    left: 250px;
+    width: 275px;
+    padding: 10px;
+    
+}
+
+.rightimg1 img{
+    width: 250px;
+    height: 250px;
+}
+
+.important{
+    position: relative;
+    width: 250px;
+    margin-top:10px;
+    background-color: white;
+    border: solid 1px #999999;
+}
+
+.important h3{
+    color: white;
+    background-color: #9c1300;
+    text-align: left;
+    padding: 10px 15px;
+}
+
+.video3{
+    display:inline-block;
+    position: relative;
+    color: white; 
+    background-color: #9c1300;
+    font-size: 12px; 
+    padding: 2px 5px; 
+    border-radius: 3px;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0px 20px 10px 20px;
+}
+
+.video3:hover{
+    cursor: pointer;
+}
+
+.rightnews{
+    padding: 10px 20px 2px 20px;
+}
+.rightnews:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.rightdata{
+    position: relative;
+    padding: 10px 20px 0px 20px;
+    margin-bottom:-8px;
+    opacity: 0.9;
+    color: #999999;
+    font-size: 12px;
+}
+
+.divdata{
+    position: relative;
+    right: 22px;
+
+}
+
+/* Начало niz*/
+
+.niz{
+    background-color: #333333;
+    display: flex;
+    padding: 30px 200px;
+}
+
+.niz img{
+    margin-right: 15px;
+}
+
+.textniz ,a {
+    color: #b4b2b2;
+    
+}
+
+.textniz a:hover{
+    text-decoration: none;
+}
