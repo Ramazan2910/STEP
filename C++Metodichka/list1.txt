@@ -1,0 +1,1059 @@
+#include <iostream>
+
+template<typename T>
+class LinkedList {
+private:
+    struct Node {
+        T data;
+        Node* next;
+
+        Node(const T& data) : data(data), next(nullptr) {}
+    };
+
+    Node* head; // указатель на начало списка
+
+public:
+    LinkedList() : head(nullptr) {}
+
+    // Добавление элемента в конец списка
+    void append(const T& item) {
+        if (head == nullptr) {
+            head = new Node(item);
+        }
+        else {
+            Node* temp = head;
+            while (temp->next != nullptr) {
+                temp = temp->next;
+            }
+            temp->next = new Node(item);
+        }
+    }
+
+    // Обход списка и вывод элементов
+    void traverse() const {
+        Node* temp = head;
+        while (temp != nullptr) {
+            std::cout << temp->data << " ";
+            temp = temp->next;
+        }
+        std::cout << std::endl;
+    }
+
+    // Удаление элемента по значению
+    void remove(const T& value) {
+        if (head == nullptr) {
+            return;
+        }
+        if (head->data == value) {
+            Node* temp = head;
+            head = head->next;
+            delete temp;
+            return;
+        }
+        Node* prev = head;
+        Node* curr = head->next;
+        while (curr != nullptr) {
+            if (curr->data == value) {
+                prev->next = curr->next;
+                delete curr;
+                return;
+            }
+            prev = curr;
+            curr = curr->next;
+        }
+    }
+
+    // Замена элемента по индексу
+    void replace(int index, const T& newValue) {
+        Node* temp = head;
+        int i = 0;
+        while (temp != nullptr && i < index) {
+            temp = temp->next;
+            i++;
+        }
+        if (temp != nullptr) {
+            temp->data = newValue;
+        }
+    }
+
+    // Поиск элемента в списке
+    bool search(const T& value) const {
+        Node* temp = head;
+        while (temp != nullptr) {
+            if (temp->data == value) {
+                return true;
+            }
+            temp = temp->next;
+        }
+        return false;
+    }
+
+    // Вывод элементов списка
+    void display() const {
+        traverse();
+    }
+
+    // Деструктор для освобождения памяти
+    ~LinkedList() {
+        while (head != nullptr) {
+            Node* temp = head;
+            head = head->next;
+            delete temp;
+        }
+    }
+};
+
+int main() {
+    LinkedList<int> list;
+
+    // Добавление элементов в список
+    list.append(1);
+    list.append(2);
+    list.append(3);
+
+    // Вывод элементов списка
+    std::cout << "List elements: ";
+    list.display(); // Выводит: 1 2 3
+
+    // Удаление элемента из списка
+    list.remove(2);
+
+    // Вывод элементов списка после удаления
+    std::cout << "List elements after removing 2: ";
+    list.display(); // Выводит: 1 3
+
+    // Замена элемента в списке
+    list.replace(1, 4);
+
+    // Вывод элементов списка после замены
+    std::cout << "List elements after replacing 3 with 4: ";
+    list.display(); // Выводит: 1 4
+
+    // Поиск элемента в списке
+    std::cout << "Is 4 in the list? " << std::boolalpha << list.search(4) << std::endl; // Выводит: true
+    std::cout << "Is 5 in the list? " << std::boolalpha << list.search(5) << std::endl; // Выводит: false
+
+    return 0;
+}
+......................................................................
+
+
+#include <iostream>
+
+template<typename T>
+struct Node {
+    T data;
+    Node* next;
+
+    Node(const T& value) : data(value), next(nullptr) {}
+};
+
+template<typename T>
+class LinkedList {
+private:
+    Node<T>* head;
+
+public:
+    LinkedList() : head(nullptr) {}
+
+    void append(const T& value) {
+        if (head == nullptr) {
+            head = new Node<T>(value);
+        } else {
+            Node<T>* temp = head;
+            while (temp->next != nullptr) {
+                temp = temp->next;
+            }
+            temp->next = new Node<T>(value);
+        }
+    }
+
+    void display() const {
+        Node<T>* temp = head;
+        while (temp != nullptr) {
+            std::cout << temp->data << " ";
+            temp = temp->next;
+        }
+        std::cout << std::endl;
+    }
+
+    void remove(const T& value) {
+        if (head == nullptr)
+            return;
+        if (head->data == value) {
+            Node<T>* temp = head;
+            head = head->next;
+            delete temp;
+            return;
+        }
+        Node<T>* prev = head;
+        Node<T>* curr = head->next;
+        while (curr != nullptr) {
+            if (curr->data == value) {
+                prev->next = curr->next;
+                delete curr;
+                return;
+            }
+            prev = curr;
+            curr = curr->next;
+        }
+    }
+
+    ~LinkedList() {
+        while (head != nullptr) {
+            Node<T>* temp = head;
+            head = head->next;
+            delete temp;
+        }
+    }
+};
+
+int main() {
+    LinkedList<int> list;
+
+    list.append(1);
+    list.append(2);
+    list.append(3);
+
+    std::cout << "List elements: ";
+    list.display();
+
+    list.remove(2);
+
+    std::cout << "List elements after removing 2: ";
+    list.display();
+
+    return 0;
+}
+
+........................................................
+
+void append(const T& value) {
+    if (head == nullptr) {
+        // Если список пуст, создаем новый узел и делаем его головой списка
+        head = new Node<T>(value);
+    }
+    else {
+        // Если список не пуст
+        // Создаем временный указатель temp и устанавливаем его на голову списка
+        Node<T>* temp = head;
+        // Проходим по списку до тех пор, пока не найдем последний узел
+        while (temp->next != nullptr) {
+            temp = temp->next;
+        }
+        // Когда найден последний узел (temp->next == nullptr),
+        // создаем новый узел с переданным значением value
+        temp->next = new Node<T>(value);
+    }
+}
+
+Если head равен nullptr, это означает, что список пуст. В этом случае создается новый узел с переданным значением value, и head устанавливается на этот новый узел, что делает его головой списка.
+
+Если head не равен nullptr, это означает, что список не пуст. Создается временный указатель temp и устанавливается на голову списка. Затем происходит проход по списку до тех пор, пока temp->next не станет равным nullptr, что указывает на последний узел списка.
+
+Когда найден последний узел (тот, у которого temp->next == nullptr), создается новый узел с переданным значением value, и указатель next последнего узла устанавливается на этот новый узел, тем самым добавляя его в конец списка.
+
+..............................................
+
+
+#include <iostream>
+
+template<typename T>
+class Node {
+public:
+    T data;
+    Node* next;
+
+    Node(const T& value) : data(value), next(nullptr) {}
+};
+
+template<typename T>
+class LinkedList {
+private:
+    Node<T>* head;
+
+public:
+    LinkedList() : head(nullptr) {}
+
+    void append(const T& value) {
+        if (head == nullptr) {
+            head = new Node<T>(value);
+        } else {
+            Node<T>* temp = head;
+            while (temp->next != nullptr) {
+                temp = temp->next;
+            }
+            temp->next = new Node<T>(value);
+        }
+    }
+
+    void display() const {
+        Node<T>* temp = head;
+        while (temp != nullptr) {
+            std::cout << temp->data << " ";
+            temp = temp->next;
+        }
+        std::cout << std::endl;
+    }
+
+    void remove(const T& value) {
+        if (head == nullptr)
+            return;
+        if (head->data == value) {
+            Node<T>* temp = head;
+            head = head->next;
+            delete temp;
+            return;
+        }
+        Node<T>* prev = head;
+        Node<T>* curr = head->next;
+        while (curr != nullptr) {
+            if (curr->data == value) {
+                prev->next = curr->next;
+                delete curr;
+                return;
+            }
+            prev = curr;
+            curr = curr->next;
+        }
+    }
+
+    ~LinkedList() {
+        while (head != nullptr) {
+            Node<T>* temp = head;
+            head = head->next;
+            delete temp;
+        }
+    }
+};
+
+int main() {
+    LinkedList<int> list;
+
+    list.append(1);
+    list.append(2);
+    list.append(3);
+
+    std::cout << "List elements: ";
+    list.display();
+
+    list.remove(2);
+
+    std::cout << "List elements after removing 2: ";
+    list.display();
+
+    return 0;
+}
+
+
+............................................................
+
+
+#include <iostream>
+
+template<typename T>
+class Node {
+public:
+    T data;
+    Node* next;
+
+    Node(const T& value) : data(value), next(nullptr) {}
+};
+
+template<typename T>
+class LinkedList {
+private:
+    Node<T>* head;
+
+public:
+    LinkedList() : head(nullptr) {}
+
+    void append(const T& value) {
+        if (head == nullptr) {
+            head = new Node<T>(value);
+        } else {
+            Node<T>* temp = head;
+            while (temp->next != nullptr) {
+                temp = temp->next;
+            }
+            temp->next = new Node<T>(value);
+        }
+    }
+
+    void display() const {
+        Node<T>* temp = head;
+        while (temp != nullptr) {
+            std::cout << temp->data << " ";
+            temp = temp->next;
+        }
+        std::cout << std::endl;
+    }
+
+    void remove(const T& value) {
+        if (head == nullptr)
+            return;
+        if (head->data == value) {
+            Node<T>* temp = head;
+            head = head->next;
+            delete temp;
+            return;
+        }
+        Node<T>* prev = head;
+        Node<T>* curr = head->next;
+        while (curr != nullptr) {
+            if (curr->data == value) {
+                prev->next = curr->next;
+                delete curr;
+                return;
+            }
+            prev = curr;
+            curr = curr->next;
+        }
+    }
+
+    void insertAtBeginning(const T& value) {
+        Node<T>* newNode = new Node<T>(value);
+        newNode->next = head;
+        head = newNode;
+    }
+
+    void insertAtEnd(const T& value) {
+        if (head == nullptr) {
+            head = new Node<T>(value);
+        } else {
+            Node<T>* temp = head;
+            while (temp->next != nullptr) {
+                temp = temp->next;
+            }
+            temp->next = new Node<T>(value);
+        }
+    }
+
+    void insertAtIndex(int index, const T& value) {
+        if (index <= 0) {
+            insertAtBeginning(value);
+            return;
+        }
+        Node<T>* newNode = new Node<T>(value);
+        Node<T>* temp = head;
+        int currentIndex = 0;
+        while (temp != nullptr && currentIndex < index - 1) {
+            temp = temp->next;
+            currentIndex++;
+        }
+        if (temp == nullptr) {
+            std::cerr << "Index out of bounds." << std::endl;
+            return;
+        }
+        newNode->next = temp->next;
+        temp->next = newNode;
+    }
+
+    void insertAfterValue(const T& targetValue, const T& newValue) {
+        Node<T>* temp = head;
+        while (temp != nullptr && temp->data != targetValue) {
+            temp = temp->next;
+        }
+        if (temp == nullptr) {
+            std::cerr << "Value not found in the list." << std::endl;
+            return;
+        }
+        Node<T>* newNode = new Node<T>(newValue);
+        newNode->next = temp->next;
+        temp->next = newNode;
+    }
+
+    ~LinkedList() {
+        while (head != nullptr) {
+            Node<T>* temp = head;
+            head = head->next;
+            delete temp;
+        }
+    }
+};
+
+int main() {
+    LinkedList<int> list;
+
+    list.append(1);
+    list.append(2);
+    list.append(3);
+
+    std::cout << "List elements: ";
+    list.display();
+
+    list.insertAtBeginning(0);
+    std::cout << "List elements after inserting 0 at the beginning: ";
+    list.display();
+
+    list.insertAtEnd(4);
+    std::cout << "List elements after inserting 4 at the end: ";
+    list.display();
+
+    list.insertAtIndex(2, 10);
+    std::cout << "List elements after inserting 10 at index 2: ";
+    list.display();
+
+    list.insertAfterValue(2, 5);
+    std::cout << "List elements after inserting 5 after value 2: ";
+    list.display();
+
+    return 0;
+}
+
+
+..............................................................................................................
+
+#include <iostream>
+
+template<typename T>
+class Node {
+public:
+    T data;
+    Node* prev;
+    Node* next;
+
+    Node(const T& value) : data(value), prev(nullptr), next(nullptr) {}
+};
+
+template<typename T>
+class DoublyLinkedList {
+private:
+    Node<T>* head;
+    Node<T>* tail;
+
+public:
+    DoublyLinkedList() : head(nullptr), tail(nullptr) {}
+
+    void append(const T& value) {
+        Node<T>* newNode = new Node<T>(value);
+        if (head == nullptr) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            newNode->prev = tail;
+            tail->next = newNode;
+            tail = newNode;
+        }
+    }
+
+    void displayForward() const {
+        Node<T>* temp = head;
+        while (temp != nullptr) {
+            std::cout << temp->data << " ";
+            temp = temp->next;
+        }
+        std::cout << std::endl;
+    }
+
+    void displayBackward() const {
+        Node<T>* temp = tail;
+        while (temp != nullptr) {
+            std::cout << temp->data << " ";
+            temp = temp->prev;
+        }
+        std::cout << std::endl;
+    }
+
+    ~DoublyLinkedList() {
+        while (head != nullptr) {
+            Node<T>* temp = head;
+            head = head->next;
+            delete temp;
+        }
+    }
+};
+
+int main() {
+    DoublyLinkedList<int> list;
+
+    list.append(1);
+    list.append(2);
+    list.append(3);
+
+    std::cout << "List elements forward: ";
+    list.displayForward();
+
+    std::cout << "List elements backward: ";
+    list.displayBackward();
+
+    return 0;
+}
+
+..........................................................................................
+
+#include <iostream>
+
+template<typename T>
+class Node {
+public:
+    T data;      // данные узла
+    Node* prev;  // указатель на предыдущий узел
+    Node* next;  // указатель на следующий узел
+
+    // Конструктор узла
+    Node(const T& value) : data(value), prev(nullptr), next(nullptr) {}
+};
+
+template<typename T>
+class DoublyLinkedList {
+private:
+    Node<T>* head;  // указатель на начало списка
+    Node<T>* tail;  // указатель на конец списка
+
+public:
+    // Конструктор списка
+    DoublyLinkedList() : head(nullptr), tail(nullptr) {}
+
+    // Метод для добавления нового элемента в конец списка
+    void append(const T& value) {
+        Node<T>* newNode = new Node<T>(value);  // Создание нового узла
+        if (head == nullptr) {  // Если список пуст
+            head = newNode;  // Устанавливаем новый узел как начало списка
+            tail = newNode;  // Устанавливаем новый узел как конец списка
+        } else {  // Если список не пуст
+            newNode->prev = tail;  // Устанавливаем предыдущий указатель нового узла на текущий конец списка
+            tail->next = newNode;  // Устанавливаем следующий указатель текущего конца списка на новый узел
+            tail = newNode;  // Обновляем указатель конца списка на новый узел
+        }
+    }
+
+    // Метод для отображения элементов списка в прямом порядке
+    void displayForward() const {
+        Node<T>* temp = head;  // Указатель temp на начало списка
+        while (temp != nullptr) {  // Проходим по списку до конца
+            std::cout << temp->data << " ";  // Выводим данные текущего узла
+            temp = temp->next;  // Переходим к следующему узлу
+        }
+        std::cout << std::endl;  // Печатаем новую строку в конце
+    }
+
+    // Метод для отображения элементов списка в обратном порядке
+    void displayBackward() const {
+        Node<T>* temp = tail;  // Указатель temp на конец списка
+        while (temp != nullptr) {  // Проходим по списку до начала
+            std::cout << temp->data << " ";  // Выводим данные текущего узла
+            temp = temp->prev;  // Переходим к предыдущему узлу
+        }
+        std::cout << std::endl;  // Печатаем новую строку в конце
+    }
+
+    // Деструктор списка
+    ~DoublyLinkedList() {
+        while (head != nullptr) {  // Пока есть узлы в списке
+            Node<T>* temp = head;  // Создаем временный указатель на начало списка
+            head = head->next;  // Переходим к следующему узлу
+            delete temp;  // Удаляем текущий узел
+        }
+    }
+};
+
+int main() {
+    DoublyLinkedList<int> list;
+
+    list.append(1);
+    list.append(2);
+    list.append(3);
+
+    std::cout << "List elements forward: ";
+    list.displayForward();
+
+    std::cout << "List elements backward: ";
+    list.displayBackward();
+
+    return 0;
+}
+
+................................................................................................................
+
+#include <iostream>
+
+class Array {
+private:
+    static const int MAX_SIZE = 100; // Максимальный размер массива
+    int data[MAX_SIZE]; // Данные массива
+    int size; // Размер массива
+
+public:
+    // Конструктор
+    Array() : size(0) {}
+
+    // Метод для добавления элемента в массив
+    void addElement(int element) {
+        if (size < MAX_SIZE) {
+            data[size++] = element;
+        }
+        
+    }
+
+    // Метод для получения размера массива
+    int getSize() const {
+        return size;
+    }
+
+    // Метод для доступа к элементу по индексу
+    int getElement(int index) const {
+       
+        return data[index];
+    }
+
+    // Метод для вывода элементов массива
+    void display() const {
+        std::cout << "Array elements: ";
+        for (int i = 0; i < size; ++i) {
+            std::cout << data[i] << " ";
+        }
+        std::cout << std::endl;
+    }
+};
+
+int main() {
+    // Создание объекта класса Array
+    Array arr;
+
+    // Добавление элементов в массив
+    arr.addElement(10);
+    arr.addElement(20);
+    arr.addElement(30);
+
+    // Вывод элементов массива
+    arr.display(); // Output: Array elements: 10 20 30
+
+    // Получение размера массива
+    std::cout << "Size of the array: " << arr.getSize() << std::endl; // Output: Size of the array: 3
+
+    // Получение элемента по индексу
+    std::cout << "Element at index 1: " << arr.getElement(1) << std::endl; // Output: Element at index 1: 20
+
+    return 0;
+}
+
+......................................................................................................
+
+#include <iostream>
+
+class IntArray {
+private:
+    int* array;     // Указатель на динамический массив
+    int size;       // Размер массива
+    int capacity;   // Вместимость массива
+
+public:
+    // Конструктор по умолчанию
+    IntArray() : array(nullptr), size(0), capacity(0) {}
+
+    // Деструктор для освобождения памяти
+    ~IntArray() {
+        delete[] array;
+    }
+
+    // Метод для добавления элемента в конец массива
+    void append(int element) {
+        // Если массив пустой, создаем новый массив с одним элементом
+        if (array == nullptr) {
+            capacity = 1; // Устанавливаем начальную вместимость массива
+            array = new int[capacity]; // Выделяем память под массив
+        } else {
+            // Если массив не пустой
+            if (size >= capacity) {
+                // Если размер массива достиг вместимости, увеличиваем вместимость вдвое
+                capacity *= 2;
+                // Создаем новый массив с увеличенной вместимостью
+                int* newArray = new int[capacity];
+                // Копируем элементы из старого массива в новый
+                for (int i = 0; i < size; ++i) {
+                    newArray[i] = array[i];
+                }
+                // Освобождаем память старого массива
+                delete[] array;
+                // Переустанавливаем указатель на новый массив
+                array = newArray;
+            }
+        }
+        // Добавляем элемент в конец массива и увеличиваем размер
+        array[size++] = element;
+    }
+
+    // Метод для доступа к элементу по индексу
+    int get(int index) const {
+        // Проверяем, находится ли индекс в пределах массива
+        if (index < 0 || index >= size) {
+            // Если индекс за пределами массива, выводим сообщение об ошибке и возвращаем значение по умолчанию
+            std::cerr << "Error: Index out of bounds" << std::endl;
+            return -1; // Возвращаем значение по умолчанию в случае ошибки
+        }
+        // Возвращаем значение элемента по указанному индексу
+        return array[index];
+    }
+
+    // Метод для получения количества элементов в массиве
+    int getSize() const {
+        return size;
+    }
+
+    // Метод для проверки, является ли массив пустым
+    bool isEmpty() const {
+        return size == 0;
+    }
+};
+
+int main() {
+    // Создаем объект класса IntArray
+    IntArray array;
+    
+    // Добавляем элементы в массив
+    array.append(10);
+    array.append(20);
+    array.append(30);
+
+    // Выводим содержимое массива
+    std::cout << "Array elements:" << std::endl;
+    for (int i = 0; i < array.getSize(); ++i) {
+        std::cout << array.get(i) << std::endl;
+    }
+
+    return 0;
+}
+
+
+.........................................................................................
+
+
+статический массив:
+
+#include <iostream>
+
+class IntArray {
+private:
+    static const int MAX_SIZE = 100; // Максимальный размер массива
+    int array[MAX_SIZE]; // Статический массив для хранения элементов
+    int size; // Текущее количество элементов в массиве
+
+public:
+    // Конструктор по умолчанию
+    IntArray() : size(0) {}
+
+    // Метод для добавления элемента в конец массива
+    void append(int element) {
+        if (size < MAX_SIZE) {
+            array[size++] = element;
+        } else {
+            std::cerr << "Error: Array is full" << std::endl;
+        }
+    }
+
+    // Метод для доступа к элементу по индексу
+    int get(int index) const {
+        if (index >= 0 && index < size) {
+            return array[index];
+        } else {
+            std::cerr << "Error: Index out of bounds" << std::endl;
+            return -1; // Возвращаем значение по умолчанию в случае ошибки
+        }
+    }
+
+    // Метод для получения количества элементов в массиве
+    int getSize() const {
+        return size;
+    }
+
+    // Метод для проверки, является ли массив пустым
+    bool isEmpty() const {
+        return size == 0;
+    }
+};
+
+int main() {
+    // Создаем объект класса IntArray
+    IntArray array;
+    
+    // Добавляем элементы в массив
+    array.append(10);
+    array.append(20);
+    array.append(30);
+
+    // Выводим содержимое массива
+    std::cout << "Array elements:" << std::endl;
+    for (int i = 0; i < array.getSize(); ++i) {
+        std::cout << array.get(i) << std::endl;
+    }
+
+    return 0;
+}
+
+........................................................................................................
+
+
+
+#include <iostream>
+
+template<typename T, int N>
+class Array {
+private:
+    T elements[N]; // Массив элементов
+    int size;      // Текущее количество элементов
+
+public:
+    // Конструктор по умолчанию
+    Array() : size(0) {}
+
+    // Метод для добавления элемента в конец массива
+    void append(T element) {
+        if (size < N) {
+            elements[size++] = element;
+        } else {
+            std::cerr << "Error: Array is full" << std::endl;
+        }
+    }
+
+    // Метод для доступа к элементу по индексу
+    T get(int index) const {
+        if (index >= 0 && index < size) {
+            return elements[index];
+        } else {
+            std::cerr << "Error: Index out of bounds" << std::endl;
+            return T(); // Возвращаем значение по умолчанию в случае ошибки
+        }
+    }
+
+    // Метод для получения количества элементов в массиве
+    int getSize() const {
+        return size;
+    }
+
+    // Метод для проверки, является ли массив пустым
+    bool isEmpty() const {
+        return size == 0;
+    }
+};
+
+int main() {
+    // Создаем объект класса Array для хранения целых чисел
+    Array<int, 5> intArray;
+    
+    // Добавляем элементы в массив
+    intArray.append(10);
+    intArray.append(20);
+    intArray.append(30);
+
+    // Выводим содержимое массива целых чисел
+    std::cout << "Integer Array elements:" << std::endl;
+    for (int i = 0; i < intArray.getSize(); ++i) {
+        std::cout << intArray.get(i) << std::endl;
+    }
+
+    // Создаем объект класса Array для хранения строк
+    Array<std::string, 3> stringArray;
+
+    // Добавляем элементы в массив строк
+    stringArray.append("Hello");
+    stringArray.append("World");
+
+    // Выводим содержимое массива строк
+    std::cout << "String Array elements:" << std::endl;
+    for (int i = 0; i < stringArray.getSize(); ++i) {
+        std::cout << stringArray.get(i) << std::endl;
+    }
+
+    return 0;
+}
+
+
+....................................................................................
+
+
+#include <iostream> 
+#include<string>
+template <typename T>
+class Person {
+public:
+    Person(T id, std::string name) : id{ id }, name{ name }
+    { }
+    void print() const
+    {
+        std::cout << "Id: " << id << "\tName: " << name << std::endl;
+    }
+private:
+    T id;
+    std::string name;
+};
+
+int main()
+{
+    Person<int> tom{ 123456, "Tom" };      // T - число
+    tom.print();    // Id: 123456      Name: Tom
+    
+}
+
+...............................................................................................
+
+#include <iostream> 
+
+template <typename T, typename V>
+class Transaction
+{
+public:
+    Transaction(T fromAcc, T toAcc, V code, unsigned sum) :
+        fromAccount{ fromAcc }, toAccount{ toAcc }, code{ code }, sum{ sum }
+    { }
+    void print() const
+    {
+        std::cout << "From: " << fromAccount << "\tTo: " << toAccount
+            << "\tSum: " << sum << "\tCode: " << code << std::endl;
+    }
+private:
+    T fromAccount;  // с какого счета
+    T toAccount;    // на какой счет
+    V code;         // код операции
+    unsigned sum;   // сумма перевода
+};
+
+int main()
+{
+    // явная типизация
+    Transaction<std::string, int> transaction1{ "id1234", "id5678", 2804, 5000 };
+    transaction1.print();   // From: id1234    To: id5678      Sum: 5000       Code: 2804
+    // неявная типизация
+    Transaction<std::string, int>transaction2{ "id6789", "id9018", 3000, 6000 };
+    transaction2.print();   // From: id6789    To: id9018      Sum: 6000       Code: 3000
+}
+
+............................................................
+
+#include <iostream>
+
+template<typename T1, typename T2>
+class Pair {
+private:
+    T1 first;
+    T2 second;
+
+public:
+    // Конструктор с параметрами для инициализации пары значений
+    Pair(const T1& f, const T2& s) : first(f), second(s) {}
+
+    // Методы доступа к значениям пары
+    T1 getFirst() const { return first; }
+    T2 getSecond() const { return second; }
+};
+
+int main() {
+    // Создаем объект класса Pair с типами int и double
+    Pair<int, double> myPair(10, 3.14);
+
+    // Выводим значения пары
+    std::cout << "First: " << myPair.getFirst() << std::endl;
+    std::cout << "Second: " << myPair.getSecond() << std::endl;
+
+    return 0;
+}
+
+......................................................................................
+
+
+
+
+
+
+
+

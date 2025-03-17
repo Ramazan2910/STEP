@@ -1,0 +1,41 @@
+#include <iostream>
+#include <cstdio>
+
+int main() {
+    int number = 123;
+    const char* filename = "example.bin";
+    FILE* file;
+    if (fopen_s(&file, filename, "wb") == 0 && file != nullptr) { // Открыть файл для записи в двоичном режиме
+        fwrite(&number, sizeof(number), 1, file); // Запись целого числа в файл
+        fclose(file);
+        std::cout << "Number has been written to file." << std::endl;
+    } else {
+        std::cout << "Unable to open file for writing" << std::endl;
+    }
+    return 0;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////
+
+#include <iostream>
+#include <cstdio>
+
+int main() {
+    int number;
+    const char* filename = "example.bin";
+    FILE* file;
+    if (fopen_s(&file, filename, "rb") == 0 && file != nullptr) { // Открыть файл для чтения в двоичном режиме
+        fread(&number, sizeof(number), 1, file); // Чтение целого числа из файла
+        std::cout << "Read number from file: " << number << std::endl;
+        fclose(file);
+    } else {
+        std::cout << "Unable to open file for reading" << std::endl;
+    }
+    return 0;
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////
+
+

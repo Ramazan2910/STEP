@@ -1,0 +1,42 @@
+Создать склад.
+
+Функции:
+Добавление товара
+Удаление товара
+Редактирование Товара
+
+с помощью структуры 
+
+struct Item{
+}
+item:
+brand
+model
+count
+price
+
+struct Adress{
+	country
+	city
+}
+struct User{
+	login
+	password
+	Adress adress	
+}
+
+struct Storekeeper{
+	Item items[]
+	Add()
+	Delete()
+	Redakt()
+	search(brand)
+}
+
+User user1;
+
+User users[2] = {user1,"admin2", "admin123"}
+
+
+Login admin1
+Password admin124

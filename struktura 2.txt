@@ -1,0 +1,325 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+// TASK 1 
+
+struct Car {
+	char color[20];
+	char model[20];
+	char number[8];
+
+	// FIRST PART
+	void Add() {
+		cout << "Color: ";
+		cin >> color;
+		cout << "Model: ";
+		cin >> model;
+		cout << "Number: ";
+		cin >> number;
+	}
+
+	void Show(Car *cars) {
+		int show;
+		cout << "Kakuyu car: ";
+		cin >> show;
+		cout <<"Color->  " << cars[show].color << "\n" << "Model-> " << cars[show].model << "\n" << "Number-> " << cars[show].number << endl;
+		cout << "\n";
+	}
+
+
+	// SECOND PART
+
+	void Edit(Car* fcars, int fsize) {
+		bool edit_flag = true;
+
+		while (edit_flag) {
+			int edit_choise;
+			int fchoise;
+			char new_word[20];
+
+			cout << "\tEdit menu\n1.Color\n2.Model\n3.Number\n4.Exit\n";
+			cout << "Vas Vibor: ";
+			cin >> edit_choise;
+
+
+
+			switch (edit_choise) {
+			case 1:
+				cout << "Kakuyu masinu menat: ";
+				cin >> fchoise;
+				cout << "Novoye slovo: ";
+				cin >> new_word;
+				for (int i = 0; i < fsize; i++)
+				{
+					if (i == fchoise) {
+						int counter = 0;
+						for (char& item : fcars[i].color) {
+							item = new_word[counter];
+							counter++;
+						}
+					}
+				}
+				cout << fcars[fchoise].color << endl;
+				break;
+			case 2:
+				cout << "Kakuyu masinu menat: ";
+				cin >> fchoise;
+				cout << "Novoye slovo: ";
+				cin >> new_word;
+				for (int i = 0; i < fsize; i++)
+				{
+					if (i == fchoise) {
+						int counter = 0;
+						for (char& item : fcars[i].model) {
+							item = new_word[counter];
+							counter++;
+						}
+					}
+				}
+				cout << fcars[fchoise].model << endl;
+				break;
+			case 3:
+				cout << "Kakuyu masinu menat: ";
+				cin >> fchoise;
+				cout << "Novoye slovo: ";
+				cin >> new_word;
+				for (int i = 0; i < fsize; i++)
+				{
+					if (i == fchoise) {
+						int counter = 0;
+						for (char& item : fcars[i].number) {
+							item = new_word[counter];
+							counter++;
+						}
+					}
+				}
+				cout << fcars[fchoise].number << endl;
+				break;
+			case 4:
+				edit_flag = false;
+				break;
+			default:
+				cout << "Net takoqo vibora!" << endl;
+				break;
+			}
+		}
+	}
+
+
+	void Show_all(Car* fcars, int fsize) {
+		for (int i = 0; i < fsize; i++)
+		{
+			cout << "Color" << '[' << i << ']' << ": " << fcars[i].color << "   Model" << '[' << i << ']' << ": " << fcars[i].model << "   Number of car" << '[' << i << ']' << ": " << fcars[i].number << endl;
+		}
+	}
+
+
+	void Search_by_number(Car* fcars, int fsize) {
+		char new_number[8];
+		cout << "Vvedite nomer: ";
+		cin >> new_number;
+		bool search_flag = false;
+
+		for (int i = 0; i < fsize; i++)
+		{
+			for (int j = 0; j < size(new_number) - 1; j++)
+			{
+				if (fcars[i].number[j] == new_number[j]) {
+					search_flag = true;
+				}
+				else {
+					search_flag = false;
+				}
+
+			}
+
+			if (search_flag) {
+				cout << "Color" << '[' << i << ']' << ": " << fcars[i].color << "   Model" << '[' << i << ']' << ": " << fcars[i].model << "   Number of car" << '[' << i << ']' << ": " << fcars[i].number << endl;
+				break;
+			}
+		}
+	}
+
+};
+
+
+
+
+// TASK 2
+
+struct Student{
+	char surname[20];
+	char group[5];
+	int performance[5];
+
+
+
+	void Excellent(Student *fstudents, int fsize) {
+		for (int i = 0; i < fsize; i++)
+		{
+			int sum = 0;
+			for (int j = 0; j < 5; j++)
+			{
+				sum += fstudents[i].performance[j];
+			}
+			float result;
+			result = sum / 5;
+			if (result>3) {
+				cout << fstudents[i].surname << " " << fstudents[i].group<<" { ";
+				for (int k = 0; k < 5; k++)
+				{
+					cout<< fstudents[i].performance[k]<<",";
+				}
+				cout << "}" << endl;
+			};
+		}
+	}
+
+
+	void Bad(Student* fstudents, int fsize) {
+		for (int i = 0; i < fsize; i++)
+		{
+			int sum = 0;
+			for (int j = 0; j < 5; j++)
+			{
+				sum += fstudents[i].performance[j];
+			}
+			float result;
+			result = sum / 5;
+			if (result<=3) {
+				cout << fstudents[i].surname << " " << fstudents[i].group << " { ";
+				for (int k = 0; k < 5; k++)
+				{
+					cout << fstudents[i].performance[k] << ",";
+				}
+				cout << "}" << endl;
+			};
+		}
+	}
+};
+
+
+int main() {
+
+	// TASK 1
+
+	const int size = 6;
+	bool flag = true;
+	Car cars[size];
+
+	cars[0] = { "White","Mers","50EJ831" };
+	cars[1] = { "White1","Mers1","50EJ83a" };
+	cars[2] = { "White2","Mers2","50EJ83b" };
+	cars[3] = { "White3","Mers3","50EJ83c" };
+	cars[4] = { "White4","Mers4","50EJ83d" };
+	cars[5] = { "White5","Mers5","50EJ83e" };
+
+	// FIRST PART
+	while (flag) {
+
+		int choise;
+		cout << "1.Add\n2.Show\n3.Exit\n";
+		cout << "Your choise: ";
+		cin >> choise;
+
+		switch (choise) {
+		case 1:
+			cars[index].Add();
+			index++;
+			break;
+		case 2:
+			cars->Show(cars);
+			break;
+		case 3:
+			flag = false;
+			cout << "Bye!";
+			break;
+		default:
+			cout << "Net takoqo vibora!" << endl;
+			break;
+		}
+
+	}
+
+	// SECOND PART
+	while (flag) {
+		int choise;
+		cout << "1.Edit\n2.Show all\n3.Search by number\n4.Exit\n";
+		cout << "Your choise: ";
+		cin >> choise;
+		switch (choise) {
+		case 1:
+			cars->Edit(cars, size);
+			break;
+		case 2:
+			cars->Show_all(cars, size);
+			break;
+		case 3:
+			cars->Search_by_number(cars, size);
+			break;
+		case 4:
+			flag = false;
+			break;
+		default:
+			cout << "Net takoqo vibora!" << endl;
+			break;
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+	// TASK 2
+	
+	int size = 5;
+	Student students[5];
+	bool flag=true;
+
+	students[0] = { "Gulie","682r",{4,5,4,5,5} };
+	students[1] = { "Sadiqov","682r",{4,2,1,3,1} };
+	students[2] = { "Guliyeva","541r",{1,5,1,3,5} };
+	students[3] = { "Guliyeva","541r",{3,1,5,5,2} };
+	students[4] = { "Guliyeva","541r",{5,5,4,4,5} };
+
+
+	while (flag) {
+		int choise;
+		cout << "1.Good\n2.Bad\n3.Exit\n";
+		cout << "Your choise: ";
+		cin >> choise;
+		switch (choise){
+		case 1:
+			students->Excellent(students,size);
+			break;
+		case 2:
+			students->Bad(students, size);
+			break;
+		case 3:
+			flag = false;
+			break;
+		default:
+			break;
+		}
+	}
+
+
+
+
+	
+
+	return 0;
+}
+
+
+
+	
+
+

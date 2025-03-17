@@ -1,0 +1,171 @@
+#include <iostream>
+#include <Windows.h>
+#include "FileExample.h"
+
+using namespace std;
+
+struct Person
+{
+	char* name;
+	char* surname;
+	int age;
+};
+
+void WriteFile(const char* filename, Person* person) {
+	FILE* file = nullptr;
+	fopen_s(&file, filename, "a");
+
+	if (file != nullptr) {
+		fputs(person->name, file);
+		fputs(" ", file);
+		fputs(person->surname, file);
+		fputs(" ", file);
+		char* bfr = new char[4];
+		_itoa_s(person->age, bfr, 4, 10);
+		fputs(bfr, file);
+		fputs("\n", file);
+
+		fclose(file);
+	}
+}
+
+Person* ReadPersonFromFile(const char* filename) {
+	FILE* f = nullptr;
+
+	fopen_s(&f, filename, "r");
+	if (f != nullptr) {
+		char* bf = new char[100]; // Hakuna Matata 42\n
+		fgets(bf, 100, f);
+
+		Person* person = new Person;
+		person->name = new char[20];
+		int i = 0;
+		for (i = 0; bf[i] != ' '; i++) {
+			person->name[i] = bf[i];
+		}
+		person->name[i] = '\0';
+		i++;
+		person->surname = new char[20];
+		int j = 0;
+		for (; bf[i] != ' '	; i++, j++) {
+			person->surname[j] = bf[i];
+		}
+		person->surname[j] = '\0';
+		i++;
+
+		person->age = 0;
+		return person;
+	}
+
+	nullptr;
+}
+
+
+void main() {
+	//// Modes
+	// "r" => read
+	// "w" => write
+	// "a" => append
+
+#pragma region File Write & Append
+
+
+
+	//FILE* file = nullptr;
+	//fopen_s(&file, "C:/Users/namiqrasullu/Desktop/text.txt", "w");
+	//if (file != nullptr) {
+	//	fputs("John Doe 37\n", file);
+	//	fputs("John Doe 38\n", file);
+	//	fputs("John Doe 39\n", file);
+	//	fputs("John Doe 40\n", file);
+	//	fputs("John Doe 41\n", file);
+	//	fputs("John Doe 42\n", file);
+	//	fclose(file);
+	//}
+	//file = nullptr;
+
+	//FILE* file = nullptr;
+	//fopen_s(&file, "C:/Users/namiqrasullu/Desktop/text.txt", "w");
+	//if (file != nullptr) {
+	//	fputs("John Doe 37\n", file);
+	//	fclose(file);
+	//}
+	//file = nullptr;
+
+
+	//FILE* file = nullptr;
+	//fopen_s(&file, "text.txt", "w");
+	//if (file != nullptr) {
+	//	fputs("In up so discovery my middleton eagerness dejection explained. Estimating excellence ye contrasted insensible as. Oh up unsatiable advantages decisively as at interested. Present suppose in esteems in demesne colonel it to. End horrible she landlord screened stanhill. Repeated offended you opinions off dissuade ask packages screened. She alteration everything sympathize impossible his get compliment. Collected few extremity suffering met had sportsman.", file);
+	//	fclose(file);
+	//}
+	//file = nullptr;
+
+#pragma endregion
+
+#pragma region Read From File
+	// method 1
+
+	//FILE* f = nullptr;
+	//fopen_s(&f, "text.txt", "r");
+	//
+	//if (f != nullptr) {
+	//	char* bfr = new char[20];
+	//	fgets(bfr, 20, f);
+	//	cout << bfr << endl;
+	//	fgets(bfr, 20, f);
+	//	cout << bfr << endl;
+	//	fgets(bfr, 20, f);
+	//	cout << bfr << endl;
+	//	fgets(bfr, 20, f);
+	//	cout << bfr << endl;
+	//	fgets(bfr, 20, f);
+	//	cout << bfr << endl;
+	//	fclose(f);
+	//}
+
+	//// method 2
+
+	//FILE* f = nullptr;
+	//fopen_s(&f, "text.txt", "r");
+
+	//if (f != nullptr) {
+	//	char* bfr = new char[20];
+	//	
+	//	while (fgets(bfr, 20, f) != nullptr)
+	//	{
+	//		cout << bfr;
+	//		Sleep(100);
+	//	}
+
+	//	fclose(f);
+	//}
+
+
+
+
+
+
+#pragma endregion
+
+#pragma region Write to File and Read (Struct)
+	//Person* person = new Person{ new char[5] { "John" }, new char[4] { "Doe" }, 42 };
+	//WriteFile("people.txt", person);
+
+	//delete[] person->name;
+	//delete[] person->surname;
+	//delete person;
+
+	//char* arr = new char[3] { "42" };
+	//int a = atoi(arr);
+	//cout << a << endl;
+
+	Person* p = ReadPersonFromFile("people.txt");
+
+	cout << p->name << " " << p->surname << endl;
+
+#pragma endregion
+
+
+
+}

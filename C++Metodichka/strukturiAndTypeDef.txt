@@ -1,0 +1,261 @@
+#include<iostream>
+#include<locale>
+#include<string>
+using namespace std;
+
+struct Person {
+	const char* name;
+	const char* surname;
+	int age;
+};
+
+struct Student {
+	Person student;
+	const char* homework;
+
+	void InfoStudent() {
+		cout << student.name << ' ' << student.surname << ' ' << homework<< endl;
+	}
+};
+
+struct Teacher {
+	Person teacher;
+	int ocenkaUchitela;
+
+	void InfoTeacher() {
+		cout << teacher.name << ' ' << teacher.surname << ' ' << ocenkaUchitela << endl;
+	}
+};
+
+
+
+int main()
+{
+	
+	Student student1;
+	student1.student.name = "Kerim";
+	student1.student.surname = "Baliev";
+	student1.homework = "Lesson21";
+	student1.InfoStudent();
+	
+	Student student2;
+	student2.student.name = "Ismail";
+	student2.student.surname = "Abbasbeyli";
+	student2.homework = "GPTspisalSamPriznayus";
+	student2.InfoStudent();
+
+
+	Teacher teacher1;
+	teacher1.teacher.name = "Tamerlan";
+	teacher1.teacher.surname = "Hasanov";
+	teacher1.ocenkaUchitela = 5;
+	teacher1.InfoTeacher();
+
+	
+}
+
+///////////////////////////////////////////////////////////////////////////////////
+
+
+#include<iostream>
+#include<locale>
+#include<string>
+using namespace std;
+
+struct Person {
+	const char* name;
+	const char* surname;
+	int* age;
+	Person(int* fage) : age(fage){
+
+	}
+
+	void Info() {
+		cout << name << ' ' << surname << ' ' << *age << endl;
+	}
+
+};
+
+
+
+int main()
+{
+	int* ageUkazatel = new int(27);
+
+	Person person1(ageUkazatel);
+	person1.name = "Tamerlan";
+	person1.surname = "Hasanov";
+
+	person1.Info();
+
+	
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////////////
+
+
+#include<iostream>
+#include<locale>
+#include<string>
+using namespace std;
+
+struct Person {
+	const char* name;
+	const char* surname;
+	int age;
+
+	void Info() {
+		cout << name << ' ' << surname << ' ' << age << endl;
+	}
+
+};
+
+
+
+int main()
+{
+	const int size1 = 3;
+
+	Person persons[size1];
+	
+	persons[0] = { "Tamerlan","Hasanov",27 };
+
+	persons[1] = { "Ismayil", "Abbasbeyli", 14 };
+	persons[2] = { "Gamida", "Samedzade", 18};
+
+	for (int i = 0; i < 3; i++)
+	{
+		cout << persons[i].name << endl;
+	}
+	
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+#include<iostream>
+#include<locale>
+#include<string>
+using namespace std;
+
+struct Person {
+	const char* name;
+	const char* surname;
+	int age;
+
+	void Info() {
+		cout << name << ' ' << surname << ' ' << age << endl;
+	}
+
+};
+
+
+
+int main()
+{
+	const int size1 = 3;
+
+	Person persons[size1];
+	
+	persons[0] = { "Tamerlan","Hasanov",27 };
+	persons[1] = { "Ismayil", "Abbasbeyli", 14 };
+	persons[2] = { "Gamida", "Samedzade", 18};
+
+	persons[0].Info();
+	persons[1].Info();
+	persons[0].Info();
+
+	
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+#include<iostream>
+#include<locale>
+#include<string>
+using namespace std;
+
+struct Person {
+	const char* name;
+	const char* surname;
+	int age;
+
+	void Info() {
+		cout << name << ' ' << surname << ' ' << age << endl;
+	}
+};
+
+
+
+int main()
+{
+	Person person1 = { "Tamerlan","Hasanov",27 };
+	Person* ukazatelPerson1 = &person1;
+
+	ukazatelPerson1->Info();
+	
+	
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+#include<iostream>
+#include<locale>
+#include<string>
+using namespace std;
+
+struct Person {
+	const char* name;
+	const char* surname;
+	int age;
+
+	void Info() {
+		cout << name << ' ' << surname << ' ' << age << endl;
+	}
+};
+
+
+
+int main()
+{
+	Person person1 = { "Tamerlan","Hasanov",27 };
+	Person* ukazatelPerson1 = &person1;
+
+	cout << ukazatelPerson1->name;
+	
+	
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#include<iostream>
+#include<locale>
+#include<string>
+using namespace std;
+
+typedef int(*Calculator)(int, int);
+
+int Plus(int a, int b) {
+	return a + b;
+}
+
+int Minus(int a, int b) {
+	return a - b;
+}
+int main()
+{
+	
+	Calculator calculator;
+	calculator = Plus;
+	cout << calculator(5, 6);
+}
+
+
+
+
+

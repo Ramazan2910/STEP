@@ -1,0 +1,505 @@
+#include <iostream>
+
+// Пример функции, на которую будет указывать указатель
+int add(int a, int b) {
+    return a + b;
+}
+
+int main() {
+    // Объявление указателя на функцию с сигнатурой int(int, int)
+    int (*funcPtr)(int, int);
+
+    // Присваивание адреса функции add указателю funcPtr
+    funcPtr = add;
+
+    // Использование указателя для вызова функции
+    int result = funcPtr(3, 5);
+    std::cout << "Результат: " << result << std::endl;
+
+    return 0;
+}
+
+В этом примере funcPtr - это указатель на функцию, принимающую два целых числа и возвращающую целое число. Мы присваиваем ему адрес функции add, а затем вызываем функцию через этот указатель.
+
+------------------------------------------------------
+
+#include <iostream>
+
+// Функция для вычисления квадрата числа
+int square(int x) {
+    return x * x;
+}
+
+// Функция для вычисления куба числа
+int cube(int x) {
+    return x * x * x;
+}
+
+// Функция, которая принимает указатель на функцию и число, 
+// затем вызывает функцию, на которую указывает указатель, передавая число в качестве аргумента
+void process(int (*funcPtr)(int), int x) {
+    std::cout << "Результат: " << funcPtr(x) << std::endl;
+}
+
+int main() {
+    // Объявление указателя на функцию
+    int (*funcPtr)(int);
+
+    // Присваивание адреса функции square указателю funcPtr
+    funcPtr = square;
+    // Вызов функции process с указателем на функцию square
+    process(funcPtr, 5);
+
+    // Присваивание адреса функции cube указателю funcPtr
+    funcPtr = cube;
+    // Вызов функции process с указателем на функцию cube
+    process(funcPtr, 5);
+
+    return 0;
+}
+ ---------------------------------
+#include <iostream>
+
+// Функция для сложения двух чисел
+int add(int a, int b) {
+    return a + b;
+}
+
+// Функция для вычитания одного числа из другого
+int subtract(int a, int b) {
+    return a - b;
+}
+
+// Функция, принимающая указатель на функцию в качестве параметра
+// и применяющая эту функцию к двум числам
+int operate(int (*operation)(int, int), int x, int y) {
+    return operation(x, y);
+}
+
+int main() {
+    // Указатель на функцию сложения
+    int (*addPtr)(int, int) = add;
+    // Вызов функции operate с указателем на функцию сложения
+    std::cout << "Сумма: " << operate(addPtr, 5, 3) << std::endl;
+
+    // Указатель на функцию вычитания
+    int (*subtractPtr)(int, int) = subtract;
+    // Вызов функции operate с указателем на функцию вычитания
+    std::cout << "Разность: " << operate(subtractPtr, 5, 3) << std::endl;
+
+    return 0;
+}
+----------------------------------------------------
+
+
+#include <iostream>
+#include <cstring>
+#include <time.h>
+#include<string>
+#include <windows.h>
+using namespace std;
+
+void f1() // Определение f1.
+{
+    cout << "Load f1()\n";
+}
+
+void f2() // Определение f2.
+{
+    cout << "Load f2()\n";
+}
+
+
+
+int main() {
+    
+    
+    void (*ptr)();// ptr — указатель на функцию.
+    ptr = f2; // Присваивается адрес f2().
+    (*ptr)(); // Вызов f2() по ее адресу.
+    ptr = f1; // Присваивается адрес f1().
+    (*ptr)(); // Вызов f1() по ее адресу.
+    ptr(); // Вызов эквивалентен (*ptr)();
+
+
+    return 0;
+}
+
+
+---------------------------------------------------------------
+#include <iostream>
+#include <cstring>
+#include <time.h>
+#include<string>
+#include <windows.h>
+using namespace std;
+
+
+/* Определение функций для обработки меню
+ (функции фиктивны т. е. реальных действий
+ не выполняют):
+*/
+void act1(char* name)
+{
+    cout << "Create file..." << name;
+}
+void act2(char* name)
+{
+    cout << "Delete file... " << name;
+}
+void act3(char* name)
+{
+    cout << "Read file... " << name;
+}
+
+void act4(char* name)
+{
+    cout << "Mode file... " << name;
+}
+void act5(char* name)
+{
+    cout << "Close file... " << name;
+}
+
+
+
+int main() {
+    
+    
+    //Создание и инициализация массива указателей
+    void (*MenuAct[5])(char*) = { act1, act2, act3,
+    act4, act5 };
+    int number; // Номер выбранного пункта меню.
+    char FileName[30]; // Строка для имени файла.
+    // Реализация меню
+    cout << "\n 0 — Create";
+    cout << "\n 1 — Delete";
+    cout << "\n 2 — Read";
+    cout << "\n 3 — Mode";
+    cout << "\n 4 — Close";
+    cout << "Enter file name: ";
+    cin >> FileName; // Читать имя файла.
+    // Вызов функции по указателю на нее
+    (*MenuAct[1])(FileName);
+    return 0;
+}
+
+-------------------------------------------------------------------
+
+#include <iostream>
+
+// Пример функций для работы с указателями на функции
+void function1() {
+    std::cout << "Функция 1\n";
+}
+
+void function2() {
+    std::cout << "Функция 2\n";
+}
+
+void function3() {
+    std::cout << "Функция 3\n";
+}
+
+int main() {
+    // Объявление массива указателей на функции
+    void (*funcArray[])() = {function1, function2, function3};
+
+    // Вызов функций через массив указателей
+    for (int i = 0; i < 3; ++i) {
+        funcArray[i](); // Вызов i-й функции из массива указателей
+    }
+
+    return 0;
+}
+
+-----------------------------------------------------------------------
+
+
+
+
+#include <iostream>
+
+int sum(int* arr, int size) {
+    int total = 0;
+    for (int i = 0; i < size; ++i) {
+        total += arr[i];
+    }
+    return total;
+}
+
+int main() {
+    int myArray[] = {1, 2, 3, 4, 5};
+    int size = sizeof(myArray) / sizeof(myArray[0]);
+
+    int result = sum(myArray, size);  // Передача массива как указателя
+    std::cout << "Сумма элементов массива: " << result << std::endl;
+
+    return 0;
+}
+
+////////////////////////////////////////////////////////////////////////////////////
+
+#include <iostream>
+
+void print2DArray(int arr[][3], int rows) {  // Указание размера второго измерения
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < 3; ++j) {
+            std::cout << arr[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
+}
+
+int main() {
+    int myArray[2][3] = {{1, 2, 3}, {4, 5, 6}};
+
+    print2DArray(myArray, 2);  // Передача двумерного массива в функцию
+
+    return 0;
+}
+///////////////////////////////////////////////////////////////////////////
+
+#include <iostream>
+
+void printArray(int* arr, int size) {
+    for (int i = 0; i < size; ++i) {
+        std::cout << *(arr + i) << " ";  // Используем арифметику указателей
+    }
+    std::cout << std::endl;
+}
+
+int main() {
+    int myArray[] = {1, 2, 3, 4, 5};
+    int size = sizeof(myArray) / sizeof(myArray[0]);
+
+    printArray(myArray, size);  // Передача массива в функцию
+
+    return 0;
+}
+……………………………………..
+
+#include <iostream>
+
+void print2DArray(int* arr, int rows, int cols) {
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            std::cout << *(arr + i * cols + j) << " ";  // Доступ к элементам через указатель
+        }
+        std::cout << std::endl;
+    }
+}
+
+int main() {
+    int myArray[2][3] = {{1, 2, 3}, {4, 5, 6}};
+
+    print2DArray(&myArray[0][0], 2, 3);  // Передача двумерного массива в функцию
+
+    return 0;
+}
+#include <iostream>
+
+void print2DArray(int* arr, int rows, int cols) {
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            std::cout << *(arr + i * cols + j) << " ";  // Доступ к элементам через указатель
+        }
+        std::cout << std::endl;
+    }
+}
+
+int main() {
+    int myArray[2][3] = {{1, 2, 3}, {4, 5, 6}};
+
+    print2DArray(&myArray[0][0], 2, 3);  // Передача двумерного массива в функцию
+
+    return 0;
+}
+
+
+…………………………………………………………………………..
+
+#include <iostream>
+
+void printArrayPointers(int** arr, int rows, int cols) {
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            std::cout << *(*(arr + i) + j) << " ";  // Доступ к элементам через указатель
+        }
+        std::cout << std::endl;
+    }
+}
+
+int main() {
+    int rows = 2, cols = 3;
+
+    // Создание массива указателей
+    int** myArray = new int*[rows];
+    for (int i = 0; i < rows; ++i) {
+        myArray[i] = new int[cols];  // Выделение памяти под каждый массив
+    }
+
+    // Заполнение массива значениями
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            myArray[i][j] = i * cols + j + 1;  // Пример заполнения
+        }
+    }
+
+    printArrayPointers(myArray, rows, cols);  // Передача массива указателей в функцию
+
+    // Освобождение памяти
+    for (int i = 0; i < rows; ++i) {
+        delete[] myArray[i];  // Освобождение каждой строки
+    }
+    delete[] myArray;  // Освобождение массива указателей
+
+    return 0;
+}
+
+
+……………………………………………………………………………………………………………………………………………….//////////////////////
+
+#include <iostream>
+
+void print3DArray(int*** arr, int x, int y, int z) {
+    for (int i = 0; i < x; ++i) {
+        for (int j = 0; j < y; ++j) {
+            for (int k = 0; k < z; ++k) {
+                std::cout << arr[i][j][k] << " ";  // Доступ к элементам массива
+            }
+            std::cout << std::endl;
+        }
+        std::cout << std::endl;
+    }
+}
+
+int main() {
+    int x = 2, y = 2, z = 3;
+
+    // Создание трехмерного массива
+    int*** myArray = new int**[x];
+    for (int i = 0; i < x; ++i) {
+        myArray[i] = new int*[y];
+        for (int j = 0; j < y; ++j) {
+            myArray[i][j] = new int[z];  // Выделение памяти под каждую строку
+        }
+    }
+
+    // Заполнение массива значениями
+    for (int i = 0; i < x; ++i) {
+        for (int j = 0; j < y; ++j) {
+            for (int k = 0; k < z; ++k) {
+                myArray[i][j][k] = i * y * z + j * z + k + 1;  // Пример заполнения
+            }
+        }
+    }
+
+    print3DArray(myArray, x, y, z);  // Передача трехмерного массива в функцию
+
+    // Освобождение памяти
+    for (int i = 0; i < x; ++i) {
+        for (int j = 0; j < y; ++j) {
+            delete[] myArray[i][j];  // Освобождение каждой строки
+        }
+        delete[] myArray[i];  // Освобождение массива указателей на строки
+    }
+    delete[] myArray;  // Освобождение массива указателей на указатели
+
+    return 0;
+}
+
+///////////////////////////////////////////////////////////////////////////////////
+
+
+#include <iostream>
+
+void increment(int* ptr) {
+    // Увеличиваем значение по адресу указателя
+    (*ptr)++;
+}
+
+int main() {
+    int value = 5;
+
+    // Вывод значения до изменения
+    std::cout << "До: " << value << std::endl;
+
+    // Передаем указатель на переменную в функцию
+    increment(&value);
+
+    // Вывод значения после изменения
+    std::cout << "После: " << value << std::endl;
+
+    return 0;
+}
+
+//////////////////////////////////////////////////////////////////
+
+#include <iostream>
+
+void allocateMemory(int** ptr, int size) {
+    *ptr = new int[size];  // Выделяем память для массива
+}
+
+void deallocateMemory(int* ptr) {
+    delete[] ptr;  // Освобождаем выделенную память
+}
+
+int main() {
+    int* array = nullptr;  // Инициализируем указатель как нулевой
+    int size = 5;
+
+    // Выделяем память для массива
+    allocateMemory(&array, size);
+
+    // Заполняем массив данными
+    for (int i = 0; i < size; i++) {
+        array[i] = i * 10;
+    }
+
+    // Выводим данные из массива
+    for (int i = 0; i < size; i++) {
+        std::cout << array[i] << " ";
+    }
+    std::cout << std::endl;
+
+    // Освобождаем память
+    deallocateMemory(array);
+
+    return 0;
+}
+
+///////////////////////////////////////////////////
+
+#include <iostream>
+
+void printArray(int* arr, int size) {
+    for (int i = 0; i < size; ++i) {
+        std::cout << arr[i] << " ";
+    }
+    std::cout << std::endl;
+}
+
+int main() {
+    int myArray[] = {1, 2, 3, 4, 5};
+    int size = sizeof(myArray) / sizeof(myArray[0]);
+
+    // Передаем массив как указатель на первый элемент
+    printArray(myArray, size);
+
+    return 0;
+}
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+

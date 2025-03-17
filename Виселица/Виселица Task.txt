@@ -1,0 +1,168 @@
+
+#include <iostream>;
+
+using namespace std;
+
+
+int main() {
+
+	string word;
+	string new_word;
+	char simbol;
+	int mistake = 0;
+	bool flag = true;
+	int a = 0;
+
+	cout << "Vvedite slovo: ";
+	cin >> word;
+	new_word = word;
+	for (int i = 0; i <= size(new_word); i++)
+	{
+		new_word[i] = '_';
+	}
+
+	while (flag) {
+		int counter = 0;
+		int second_counter = 1;
+		int index = 0;
+
+		while (a == 0) {
+			cout << "Iqra nacalas: ";
+			cout << new_word;
+			a++;
+		}
+
+		cout << endl;
+		cout << "Vvedite bukvu: ";
+		cin >> simbol;
+
+		for (char poisk : word) {
+			if (poisk == simbol) {
+				counter++;
+			}
+		}
+
+		if (counter > 0) {
+			for (char poisk : word) {
+				if (poisk == simbol) {
+					if (counter > 1) {
+						new_word[index] = poisk;
+						if (counter == second_counter) {
+							cout << new_word;
+						}
+						second_counter++;
+					}
+					else {
+						new_word[index] = poisk;
+						cout << new_word;
+					}
+				}
+				index++;
+			}
+		}
+		else {
+			mistake++;
+			switch (mistake) {
+			case 1:
+				cout << "||";
+				cout << "---------------" << endl;
+				cout << "||" << "              " << "||" << endl;
+				cout << "||" << endl;
+				cout << "||" << endl;
+				cout << "||" << endl;
+				cout << "||" << endl;
+				cout << "||" << endl;
+				cout << "||" << endl;
+				cout << "||" << endl;
+				break;
+			case 2:
+				cout << "||";
+				cout << "---------------" << endl;
+				cout << "||" << "              " << "||" << endl;
+				cout << "||" << "              " << "||" << endl;
+				cout << "||" << "              " << "||" << endl;
+				cout << "||" << "              " << " O" << endl;
+				cout << "||" << endl;
+				cout << "||" << endl;
+				cout << "||" << endl;
+				cout << "||" << endl;
+				break;
+			case 3:
+				cout << "||";
+				cout << "---------------" << endl;
+				cout << "||" << "              " << "||" << endl;
+				cout << "||" << "              " << "||" << endl;
+				cout << "||" << "              " << "||" << endl;
+				cout << "||" << "              " << "O" << endl;
+				cout << "||" << "              " << "|" << endl;
+				cout << "||" << endl;
+				cout << "||" << endl;
+				cout << "||" << endl;
+				break;
+			case 4:
+				cout << "||";
+				cout << "---------------" << endl;
+				cout << "||" << "              " << "||" << endl;
+				cout << "||" << "              " << "||" << endl;
+				cout << "||" << "              " << "||" << endl;
+				cout << "||" << "              " << "O" << endl;
+				cout << "||" << "             " << "/" << "|" << endl;
+				cout << "||" << endl;
+				cout << "||" << endl;
+				cout << "||" << endl;
+				break;
+			case 5:
+				cout << "||";
+				cout << "---------------" << endl;
+				cout << "||" << "              " << "||" << endl;
+				cout << "||" << "              " << "||" << endl;
+				cout << "||" << "              " << "||" << endl;
+				cout << "||" << "              " << "O" << endl;
+				cout << "||" << "             " << "/" << "|" << "\\" << endl;
+				cout << "||" << endl;
+				cout << "||" << endl;
+				cout << "||" << endl;
+				break;
+			case 6:
+				cout << "||";
+				cout << "---------------" << endl;
+				cout << "||" << "              " << "||" << endl;
+				cout << "||" << "              " << "||" << endl;
+				cout << "||" << "              " << "||" << endl;
+				cout << "||" << "              " << "O" << endl;
+				cout << "||" << "             " << "/" << "|" << "\\" << endl;
+				cout << "||" << "             " << "/" << endl;
+				cout << "||" << endl;
+				cout << "||" << endl;
+				break;
+			case 7:
+				cout << "||";
+				cout << "---------------" << endl;
+				cout << "||" << "              " << "||" << endl;
+				cout << "||" << "              " << "||" << endl;
+				cout << "||" << "              " << "||" << endl;
+				cout << "||" << "              " << "O" << endl;
+				cout << "||" << "             " << "/" << "|" << "\\" << endl;
+				cout << "||" << "             " << "/" << " " << "\\" << endl;
+				cout << "||" << endl;
+				cout << "||" << endl;
+				cout << "Proiqral!";
+				flag = false;
+			default:
+				break;
+			}
+
+		}
+
+		if (new_word == word) {
+			cout << endl;
+			cout << "Pobeda!";
+			flag == false;
+		}
+
+	}
+
+
+
+	return 0;
+}

@@ -1,0 +1,205 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Person {
+private:
+	char* name;
+	char* surname;
+	char* father_name;
+	int age;
+public:
+	Person(const char* name, const char* surname, const char* father_name, int age) {
+		this->name = new char[strlen(name) + 1];
+		this->surname = new char[strlen(surname) + 1];
+		this->father_name = new char[strlen(father_name) + 1];
+
+		strcpy_s(this->name, strlen(name) + 1, name);
+		strcpy_s(this->surname, strlen(surname) + 1, surname);
+		strcpy_s(this->father_name, strlen(father_name) + 1, father_name);
+		this->age = age;
+	}
+
+	Person() {
+		this->name = nullptr;
+		this->surname = nullptr;
+		this->father_name = nullptr;
+		this->age = 0;
+	}
+
+	Person& operator=(const Person& other) {
+		delete[] name;
+		delete[] surname;
+		delete[] father_name;
+
+		this->name = new char[strlen(other.name) + 1];
+		this->surname = new char[strlen(other.surname) + 1];
+		this->father_name = new char[strlen(other.father_name) + 1];
+
+		strcpy_s(this->name, strlen(other.name) + 1, other.name);
+		strcpy_s(this->surname, strlen(other.surname) + 1, other.surname);
+		strcpy_s(this->father_name, strlen(other.father_name) + 1, other.father_name);
+		this->age = other.age;
+		return *this;
+	}
+
+	~Person() {
+		delete[] name;
+		delete[] surname;
+		delete[] father_name;
+	}
+
+	void show_Person() {
+		cout << this->name << " " << this->surname << " " << this->father_name << " " << this->age << endl;
+	}
+
+};
+
+class Flat {
+private:
+	Person* persons;
+	int people;
+	int amount_room;
+	float size_of_flat;
+	int flat_counter;
+public:
+	Flat(int people,int amount_room, float size_of_flat) {
+		this->persons = new Person[people];
+		this->people = people;
+		this->amount_room = amount_room;
+		this->size_of_flat = size_of_flat;
+		this->flat_counter = 0;
+	}
+
+	Flat() {
+		this->persons = nullptr;
+		this->people = 0;
+		this->amount_room = 0;
+		this->size_of_flat = 0;
+		this->flat_counter = 0;
+	}
+
+	Flat& operator=(const Flat& other) {
+		delete[] persons;
+
+		this->people = other.people;
+		this->amount_room = other.amount_room;
+		this->size_of_flat = other.size_of_flat;
+		this->flat_counter = other.flat_counter;
+
+		persons = new Person[people];
+		for (int i = 0; i < people; ++i) {
+			this->persons[i] = other.persons[i];
+		}
+
+		return *this;
+	}
+
+	void Add_person(const Person& other) {
+		if(this->people > this->flat_counter){
+
+			persons[flat_counter]=other;
+			flat_counter++;
+		}
+		else {
+			cout << "Kvartira ponlnaya!";
+		}
+	}
+
+	void show_Falt() {
+		cout << "Kolicestvo komnat v kvartire: " << this->amount_room << endl;
+		cout << "Kvadratura kvartiti: " << this->size_of_flat << endl;
+		cout << "Kolicestvo jiteley - > " << this->people << endl;
+		cout << endl;
+		for (int i = 0; i < this->people; i++)
+		{
+			persons[i].show_Person();
+
+		}
+	}
+	
+	~Flat() {
+		delete[]persons;
+	}
+};
+
+
+class House {
+private:
+	Flat* flats;
+	int amount_of_flat;
+	int amount_floar;
+	int amount_entrance;
+	int house_counter;
+public:
+	House(int amount_of_flat,int amount_floar,int amount_entrance){
+		this->flats = new Flat[amount_of_flat];
+		this->amount_of_flat = amount_of_flat;
+		this->amount_floar = amount_floar;
+		this->amount_entrance = amount_entrance;
+		this->house_counter = house_counter;
+	}
+
+	House() {
+		this->flats = nullptr;
+		this->amount_of_flat = 0;
+		this->amount_floar = 0;
+		this->amount_entrance = 0;
+		this->house_counter = 0;
+	}
+
+	void Add_flats(const Flat& other) {
+		if (this->amount_of_flat > this->house_counter) {
+
+			flats[house_counter] = other;
+			house_counter++;
+		}
+		else {
+			cout << "Dom ponlniy!";
+		}
+	}
+
+	void show_House() {
+		cout << "Kolicestvo etajey: " << this->amount_floar << endl;
+		cout << "Kolicestvo podezdov: " << this->amount_entrance << endl;
+		cout << "Kolicestvo kvartir v dome - > " << this->amount_of_flat << endl;
+		cout << endl;
+		for (int i = 0; i < this->amount_of_flat; i++)
+		{
+			flats[i].show_Falt();
+			cout << endl;
+		}
+	}
+
+	~House(){
+		delete[]flats;
+	}
+};
+
+
+int main() {
+
+	Person per1("Hello", "Hello", "Hello",25);
+	Person per2("Hello1", "Hello1", "Hello1", 45);
+	Person per3("Hello2", "Hello2", "Hello2", 38);
+
+	Flat flat(3, 2, 55.5);
+	flat.Add_person(per1);
+	flat.Add_person(per2);
+	flat.Add_person(per3);
+
+	Flat flat1(2, 7, 57.5);
+
+	flat1.Add_person(per1);
+	flat1.Add_person(per2);
+
+	House house(2,5,4);
+	
+	house.Add_flats(flat);
+	house.Add_flats(flat1);
+
+	house.show_House();
+
+	return 0;
+}

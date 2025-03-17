@@ -1,0 +1,33 @@
+#include <iostream>
+
+// Базовый класс
+class Base {
+public:
+    virtual void print() {
+        std::cout << "Это объект класса Base\n";
+    }
+    virtual ~Base() {} // Виртуальный деструктор
+};
+
+// Производный класс
+class Derived : public virtual Base {
+public:
+    void print() override {
+        std::cout << "Это объект класса Derived\n";
+    }
+};
+
+int main() {
+    Base* basePtr = new Derived(); // Создаем объект производного класса и приводим его к указателю базового класса
+
+    Derived* derivedPtr = dynamic_cast<Derived*>(basePtr); // Приводим указатель на базовый класс к указателю производного класса
+
+    if (derivedPtr) { // Проверяем, удалось ли приведение
+        derivedPtr->print(); // Вызываем метод производного класса
+    } else {
+        std::cout << "Приведение не удалось\n";
+    }
+
+    delete basePtr; // Освобождаем память
+    return 0;
+}

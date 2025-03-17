@@ -1,0 +1,43 @@
+#include <iostream>
+
+// Объявление перечисления для цветов
+enum Color {
+    Red,
+    Green,
+    Blue,
+    Yellow,
+    Black,
+    White
+};
+
+int main() {
+    // Использование перечисления
+    Color selectedColor = Blue;
+
+    // Проверка выбранного цвета
+    switch (selectedColor) {
+        case Red:
+            std::cout << "Выбран красный цвет\n";
+            break;
+        case Green:
+            std::cout << "Выбран зеленый цвет\n";
+            break;
+        case Blue:
+            std::cout << "Выбран синий цвет\n";
+            break;
+        case Yellow:
+            std::cout << "Выбран желтый цвет\n";
+            break;
+        case Black:
+            std::cout << "Выбран черный цвет\n";
+            break;
+        case White:
+            std::cout << "Выбран белый цвет\n";
+            break;
+        default:
+            std::cout << "Некорректный цвет\n";
+            break;
+    }
+
+    return 0;
+}

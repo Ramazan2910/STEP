@@ -1,0 +1,300 @@
+#include "iostream"
+
+using namespace std;
+
+int main(){
+	// Task 1
+
+
+	int proverka;
+	cout << "Vvedite cislo: ";
+	cin >> proverka;
+
+	if (proverka % 3 == 0 && proverka % 5 == 0) {
+		cout << "Delitsa!";
+	}
+	else {
+		cout << "NET!";
+	}
+
+	// Task 2
+	
+
+	int month;
+	cout << "Vvedite cislo: ";
+	cin >> month;
+	cout << endl;
+
+
+	switch (month) {
+	case 1:
+		cout << "Zima";
+		break;
+	case 2:
+		cout << "Zima";
+		break;
+	case 3:
+		cout << "Vesna";
+		break;
+	case 4:
+		cout << "Vesna";
+		break;
+	case 5:
+		cout << "Vesna";
+		break;
+	case 6:
+		cout << "Leto";
+		break;
+	case 7:
+		cout << "Leto";
+		break;
+	case 8:
+		cout << "Leto";
+		break;
+	case 9:
+		cout << "Osen";
+		break;
+	case 10:
+		cout << "Osen";
+		break;
+	case 11:
+		cout << "Osen";
+		break;
+	case 12:
+		cout << "Zima";
+		break;
+	default:
+		cout << "Netu !";
+	}
+
+	// Task 3
+
+	
+	float num1, num2;
+	char simbol;
+	cout << "Vvedite num1: ";
+	cin >> num1;
+	cout << "Vvedite num2: ";
+	cin >> num2;
+	cout << "Vvedite simbol ";
+	cin >> simbol;
+	cout << endl;
+
+	if (simbol == '+') {
+		cout << "Resultat: " << num1 + num2 << endl;
+	}
+	else if (simbol == '-') {
+		cout << "Resultat: " << num1 - num2 << endl;
+	}
+	else if (simbol == '*') {
+		cout << "Resultat: " << num1 * num2 << endl;
+	}
+	else if (simbol == '/') {
+		if (num2 == 0) {
+			cout << "Nelzya!";
+		}
+		else {
+			cout << "Resultat: " << num1 / num2 << endl;
+		}
+	}
+	else {
+		cout << "Poprobuy eshe raz";
+	}
+
+
+	// Task 4 
+
+	
+	int ball1, ball2, ball3;
+	cout << "Vvedite ball1: ";
+	cin >> ball1;
+	cout << "Vvedite ball2: ";
+	cin >> ball2;
+	cout << "Vvedite ball3: ";
+	cin >> ball3;
+	cout << endl;
+
+	if (ball1 > ball2) {
+		if (ball1 > ball3) {
+			cout << "Samiy bolshoy ball: " << ball1;
+		}
+		else if (ball1 == ball3) {
+			cout << "ball1 == ball1 -- " << ball1;
+		}
+		else {
+			cout << "Samiy bolshoy ball: " << ball3;
+		}
+	}
+	else if (ball1 == ball2) {
+		if (ball1 == ball3) {
+			cout << "ball1 == ball2 == ball3 -- " << ball1;
+		}
+		else {
+			cout << "ball1 == ball2 -- " << ball1;
+		}
+	}
+	else {
+		if (ball2 > ball3) {
+			cout << "Samiy bolshoy ball: " << ball2;
+		}
+		else if (ball2 == ball3) {
+			cout << "ball2 == ball3 -- " << ball2;
+		}
+		else {
+			cout << "Samiy bolshoy ball: " << ball3;
+		}
+	}
+	
+
+	// Task5 
+
+	
+	string login, password, loginbase, passwordbase;
+
+	loginbase = "ramazanquliyev05@gmail.com";
+	passwordbase = "privet&/05/";
+
+
+	cout << "Vvedite login: ";
+	cin >> login;
+	cout << "Vvedite password: ";
+	cin >> password;
+
+	if (login == loginbase && password == passwordbase) {
+		cout << "Uspesniy vxod ;)";
+	}
+	else {
+		cout << "Neverniy vxod!";
+	}
+	
+
+	// Task 6
+	
+	
+	int num;
+
+	cout << "Vvedite cilso: ";
+	cin >> num;
+
+	if (num > 0) {
+		cout << "Cislo pololitelnoe!";
+	}
+	else if (num == 0) {
+		cout << "Cislo ravno nulu!";
+	}
+	else {
+		cout << "Cislo otricacelnoe!";
+	}
+	
+
+	// Task 7
+
+
+	
+	int side1, side2, side3;
+	cout << "Vvedite side1: ";
+	cin >> side1;
+	cout << "Vvedite side2: ";
+	cin >> side2;
+	cout << "Vvedite side3: ";
+	cin >> side3;
+	cout << endl;
+
+
+	if (side1 == side2) {
+		if (side1 == side3) {
+			cout << "Treuqolnik ravnostoronniy!";
+		}
+		else {
+			cout << "Treuqolnik ravnobedreniy";
+		}
+	}
+	else{
+		if (side2 == side3 || side1 == side3) {
+			cout << "Treuqolnik ravnobedreniy";
+		}
+
+		else {
+			cout << "Treuqolnik ravnostoronniy!";
+		}
+	}
+	
+
+	// Task 8
+		
+	
+
+	unsigned int time;
+	cout << "Vvedite time: ";
+	cin >> time;
+
+	if (5 > time && time >= 0) {
+		cout << "Noch!";
+	}
+	else if (12 > time && time >= 5) {
+		cout << "Utro!";
+	}
+	else if (18 > time && time >= 12) {
+		cout << "Den!";
+	}
+	else if (24 > time && time >= 18) {
+		cout << "Vecer!";
+	}
+	else {
+		cout << "Ne parvilniy vvod!";
+	}
+	
+	
+
+	// Task 9
+	
+	
+
+	unsigned int ball;
+	cout << "Vvedite ball: ";
+	cin >> ball;
+
+	if (100 >= ball && ball >= 91) {
+		cout << "A";
+	}
+	else if (91 > ball && ball>=81) {
+		cout << "B";
+	}
+	else if (81 > ball && ball >= 71) {
+		cout << "C";
+	}
+	else if (71 > ball && ball >= 61) {
+		cout << "D";
+	}
+	else if (61 > ball) {
+		cout << "F";
+	}
+	else {
+		cout << "Nepravilno!";
+	}
+	
+
+	// Task 10
+	
+
+	int side1, side2;
+	cout << "Vvedite side1: ";
+	cin >> side1;
+	cout << "Vvedite side2: ";
+	cin >> side2;
+
+	if (side1 < 0 || side2 < 0) {
+		cout << "Ne pravilniy vvod!";
+	}
+	else {
+		if (side1 == side2) {
+			cout << "Eto kvadrat!";
+		}
+		else {
+			cout << "Eto pramouqolnik!";
+		}
+	}
+
+
+	return 0;
+}

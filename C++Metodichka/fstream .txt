@@ -1,0 +1,359 @@
+Для работы с файлами в стандартной библиотеке определен заголовочный файл fstream, который определяет базовые типы для чтения и записи файлов. В частности, это:
+
+ifstream: для чтения с файла
+
+ofstream: для записи в файл
+
+fstream: совмещает запись и чтение
+........................................................................................
+
+Для открытия файла в функцию необходимо передать путь к файлу в виде строки. И также можно указать режим открытия. Список доступных режимов открытия файла:
+
+ios::in: файл открывается для ввода (чтения). Может быть установлен только для объекта ifstream или fstream
+
+ios::out: файл открывается для вывода (записи). При этом старые данные удаляются. Может быть установлен только для объекта ofstream или fstream
+
+ios::app: файл открывается для дозаписи. Старые данные не удаляются.
+
+ios::ate: после открытия файла перемещает указатель в конец файла
+
+ios::trunc: файл усекается при открытии. Может быть установлен, если также установлен режим out
+
+ios::binary: файл открывается в бинарном режиме
+
+.........................................................................................
+
+
+
+
+fs zapis:
+
+ofstream out;          // поток для записи
+out.open("test.txt");      // открываем файл для записи
+if (out.is_open())
+{
+    out << "Hello World!" << std::endl;
+}
+out.close();
+
+...............................................................
+
+app - если файл сузествует, то данные добавляются если нет новый файл создаёт и добавляет.
+
+ofstream out("test.txt", std::ios::app);
+if (out.is_open())
+{
+    out << "Welcome to C++" << std::endl;
+}
+out.close();
+
+...............................................................
+
+
+Чтение из файла:
+
+Если надо считать всю строку целиком или даже все строки из файла, то лучше использовать встроенную функцию getline(), которая принимает поток для чтения и переменную, в которую надо считать текст:
+
+string line;
+
+ifstream in("test.txt"); // окрываем файл для чтения
+if (in.is_open())
+{
+    while (getline(in, line))
+    {
+        cout << line << endl;
+    }
+}
+in.close();     // закрываем файл
+
+
+...............................................................
+
+Также для чтения данных из файла для объектов ifstream и fstream может применяться оператор >> (также как и при чтении с консоли):
+
+
+#include <iostream>
+#include<string>
+#include <fstream>
+using namespace std;
+
+struct Point {
+    int x;
+    int y;
+};
+
+
+int main() {
+	Point point_1;
+	point_1.x = 10;
+	point_1.y = 11;
+
+	Point point_2;
+	point_2.x = 3;
+	point_2.y = 4;
+
+	Point point_3;
+	point_3.x = 5;
+	point_3.y = 6;
+
+	Point point_4;
+	point_4.x = -45;
+	point_4.y = -23;
+
+	Point* points = new Point[4];
+
+	points[0] = point_1;
+	points[1] = point_2;
+	points[2] = point_3;
+	points[3] = point_4;
+
+
+	ofstream out("points.txt");
+
+	if (out.is_open())
+	{
+		// записываем все объекты Point в файл
+		for(int i = 0; i < 4; i++)
+		{
+			out << points[i].x << " " << points[i].y << endl;
+		}
+	}
+	out.close();
+    
+
+    return 0;
+}
+
+........................................................................................
+
+чтение:
+
+
+#include <iostream>
+#include<string>
+#include <fstream>
+using namespace std;
+
+struct Point {
+    int x;
+    int y;
+};
+
+
+int main() {
+
+    ifstream infile("points.txt");
+
+    Point read_point;
+    while (infile >> read_point.x >> read_point.y) {
+        std::cout << "x: " << read_point.x << ", y: " << read_point.y << std::endl;
+    }
+
+    // Закрываем файл
+    infile.close();
+    return 0;
+}
+
+Этот код выполняет цикл чтения из файла infile в структуру read_point.
+
+Выражение infile >> read_point.x >> read_point.y читает значения x и y из файла infile и записывает их в переменные read_point.x и read_point.y соответственно.
+
+Цикл while будет продолжаться до тех пор, пока операция чтения из файла infile успешно выполняется. Как только операция чтения не удастся (например, когда достигнут конец файла или произойдет ошибка), условие infile >> read_point.x >> read_point.y вернет false, и цикл завершится.
+
+Внутри цикла выводятся координаты точек, считанные из файла, с помощью std::cout.
+
+
+
+Оператор >> в C++ - это оператор ввода (извлечения) из потока. Он используется для чтения данных из потока в переменные.
+
+В случае с файловым вводом >> используется для извлечения данных из файла в переменные. Например:
+
+infile >> read_point.x >> read_point.y;
+
+
+Эта строка кода сначала читает значение x из файла infile и сохраняет его в переменную read_point.x, а затем читает значение y из того же файла и сохраняет его в переменную read_point.y.
+
+Если infile - это файловый поток, то оператор >> читает следующее значение из файла, пропуская пробельные символы (пробелы, табуляции, переводы строки и т. д.), и записывает его в переменную справа от оператора >>.
+
+Оператор >> возвращает сам поток (в данном случае infile), что позволяет использовать его в цепочке операций ввода.
+
+Если чтение прошло успешно, оператор >> возвращает true, иначе - false, что может быть использовано в условиях вроде while для проверки успешности операции чтения.
+
+..........................................................................
+
+#include <iostream>
+#include<string>
+#include <fstream>
+using namespace std;
+
+
+
+
+int main() {
+
+    string path = "fileTest.txt";
+    fstream fs;
+    fs.open(path, fstream::in | fstream::out | fstream::app);
+    cout << "1 - Add\n2 - Read" << endl;
+    if (!fs.is_open()) {
+        cout << "Oshibka otkritiya fayla " << endl;
+    }
+    else {
+        string msg;
+        int value;
+        cout << "Fayl otkrit" << endl;
+        cin >> value;
+        if (value == 1) {
+            cin >> msg;
+            fs << msg << "\n";
+        }
+        if (value == 2) {
+            while (!fs.eof()) { // end of file(zakoncilsa li ili net)(ne konec fayla)
+                msg = "";// esli predidushiy zapolnen to opustashit dannie
+                fs >> msg;
+                cout << msg << endl;
+            }
+        }
+    }
+    return 0;
+}
+
+....................................................................
+
+
+#include <iostream>
+#include<string>
+#include <fstream>
+using namespace std;
+
+class Point {
+public:
+    Point(){
+        x = 0;
+        y = 0;
+        z = 0;
+    }
+
+    Point(int x, int y, int z) {
+        this->x = x;
+        this->y = y;
+        this->z = z;
+    }
+
+    void Print() {
+        cout << "X: " << x << "\tY: " << y << "\tZ: " << z << endl;
+    }
+
+public:
+    int x;
+    int y;
+    int z;
+
+};
+
+
+int main() {
+
+    string path = "myFile.txt";
+    
+    Point point(1125, 1120, 2145);
+
+    ofstream fout; // dla toqo chtobi soxranat fayl
+    fout.open(path,ofstream::app);
+    if (!fout.is_open()) {
+        cout << "Oshibka otkritia fayla" << endl;
+    }
+    else {
+        cout << "Fayl oktrit" << endl;
+        fout.write((char*) & point, sizeof(Point));
+    }
+
+    fout.close();
+
+
+    return 0;
+}
+
+
+...........................................................................
+
+#include <iostream>
+#include<string>
+#include <fstream>
+using namespace std;
+
+class Point {
+public:
+    Point(){
+        x = 0;
+        y = 0;
+        z = 0;
+    }
+
+    Point(int x, int y, int z) {
+        this->x = x;
+        this->y = y;
+        this->z = z;
+    }
+
+    void Print() {
+        cout << "X: " << x << "\tY: " << y << "\tZ: " << z << endl;
+    }
+
+public:
+    int x;
+    int y;
+    int z;
+
+};
+
+
+int main() {
+
+    string path = "myFile.txt";
+    
+    ifstream fin; // dla toqo chtobi soxranat fayl
+    fin.open(path);
+    if (!fin.is_open()) {
+        cout << "Oshibka otkritia fayla" << endl;
+    }
+    else {
+        cout << "Fayl oktrit" << endl;
+        Point pnt;
+        while (fin.read((char*)&pnt, sizeof(Point))) {
+            pnt.Print();
+        }
+    }
+
+    fin.close();
+
+
+    /*Point point(1125, 1120, 2145);
+
+    ofstream fout; // dla toqo chtobi soxranat fayl
+    fout.open(path,ofstream::app);
+    if (!fout.is_open()) {
+        cout << "Oshibka otkritia fayla" << endl;
+    }
+    else {
+        cout << "Fayl oktrit" << endl;
+        fout.write((char*) & point, sizeof(Point));
+    }
+
+    fout.close();*/
+
+
+    return 0;
+}
+
+......................................................................
+
+
+
+
+
+
+
+
+
+

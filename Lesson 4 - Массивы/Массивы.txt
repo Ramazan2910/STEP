@@ -1,0 +1,163 @@
+#include <iostream>;
+
+using namespace std;
+
+int main() {
+
+	// Task 1
+
+
+	int massiv1[3];
+	int sum=0;
+
+	cout << "Nacnite vvod"<<endl;
+
+	for (int i = 0; i < 3; i++)
+	{
+		cin >> massiv1[i];
+		sum += massiv1[i];
+	}
+	cout << sum;
+
+
+	// Task 2
+
+
+	int massiv1[3];
+	int sum = 0;
+
+	cout << "Nacnite vvod" << endl;
+
+	for (int i = 0; i < 3; i++)
+	{
+		cin >> massiv1[i];
+		sum += massiv1[i];
+	}
+
+	cout << "Srednee arifmeticeskoe -> " << sum / size(massiv1);
+
+
+
+	// Task 3
+
+
+	int massiv1[5] = { 1,5,3,4,8 };
+	int num;
+	bool flag = true;
+
+	cout << "Vvedite cislo: ";
+	cin >> num;
+
+	for (int i = 0; i < size(massiv1); i++)
+	{
+		if (massiv1[i] == num) {
+			cout << "Eto vase cilso" << " -> " << i << endl;
+			flag = false;
+		}
+	}
+
+	if (flag) {
+		cout << "Net cisla!";
+	}
+
+
+	// Task 4
+
+
+	int massiv1[5] = { 1,5,3,4,8 };
+
+	for (int i = size(massiv1)-1; i >= 0; i--)
+	{
+		cout << massiv1[i]<< ' ';
+		
+	}
+
+
+
+
+	// Task 5
+
+
+	int j = 0;
+	int massiv1[3];
+	int massiv2[3];
+	int massiv3[6];
+
+	cout << "Vvod massiva1: ";
+
+	for (int i = 0; i < size(massiv1); i++)
+	{
+		cin >> massiv1[i];
+		massiv3[j] = massiv1[i];
+		j++;
+	}
+
+	cout << "Vvod massiva2: ";
+
+	for (int i = 0; i < size(massiv2); i++)
+	{
+		cin >> massiv2[i];
+		massiv3[j] = massiv2[i];
+		j++;
+	}
+
+	cout << "Massiva3 -> ";
+
+	for (int i = 0; i < size(massiv3); i++)
+	{
+		cout << massiv3[i] << " ";
+	}
+
+
+
+	// Task 6
+
+
+	int massiv1[8] = { 0,1,5,-4,84,-4,0,-4 };
+	int pol =0 , otr=0 , null=0;
+
+	for (int i = 0; i < 8; i++)
+	{
+		if (massiv1[i]>0) {
+			pol++;
+		}
+		else if (massiv1[i] < 0) {
+			otr++;
+		}
+		else if (massiv1[i] == 0) {
+			null++;
+		}
+		else {
+			cout << " Net poka !";
+		}
+	}
+
+	cout << "Polojit cisla = " << pol << "   " << "Otricat cisla = " << otr << "   " << "Null cisla = " << null;
+
+
+
+	// Task 7
+
+	int massiv1[8] = { 2,1,6,-4,84,17,0,-4 };
+	int cet = 0, necet = 0;
+
+	for (int i = 0; i < 8; i++)
+	{
+		if (massiv1[i] < 0 || massiv1[i] == 0) {
+			continue;
+		}
+		else if (massiv1[i] % 2 == 0) {
+			cet++;
+		}
+		else if (massiv1[i] % 2 != 0) {
+			necet++;
+		}
+		else {
+			cout << "Net!";
+		}
+	}
+
+	cout << "Cet cisla = " << cet << "   " << "Necet cisla = " << necet;
+
+	return 0;
+}

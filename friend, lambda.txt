@@ -1,0 +1,140 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+// Task 1
+
+class Student {
+private:
+	char* name;
+	int grade;
+public:
+	Student(const char* name, int grade) {
+		this->name = new char[strlen(name) + 1];
+		
+		strcpy_s(this->name, strlen(name) + 1, name);
+		this->grade = grade;
+	}
+
+	~Student() {
+		delete[]name;
+	}
+
+	void Info() {
+		cout << "Student: " << this->name<< ";" << " Grade: " << this->grade << endl;
+
+	}
+
+	int GetGrade() {
+		return this->grade;
+	}
+
+	friend void Increase(Student& student);
+};
+
+void Increase(Student& student) {
+	if (student.grade < 96) {
+		student.grade += 5;
+		cout << "Ball uvelicen!" << endl;
+	}
+	else {
+		cout << "Ne vozmojno uvelicet ball!"<<endl;
+	}
+}
+
+// Task 2
+
+class BankAccount {
+private:
+	char* name;
+	char* surname;
+	char* type_of_account;
+	float balance;
+public:
+	BankAccount(const char* name, const char* surname, const char* type_of_account, float balance) {
+		this->name = new char[strlen(name) + 1];
+		this->surname = new char[strlen(surname) + 1];
+		this->type_of_account = new char[strlen(type_of_account) + 1];
+
+		strcpy_s(this->name, strlen(name) + 1, name);
+		strcpy_s(this->surname, strlen(surname) + 1, surname);
+		strcpy_s(this->type_of_account, strlen(type_of_account) + 1, type_of_account);
+
+		this->balance = balance;
+	}
+
+	~BankAccount() {
+		delete[]name;
+		delete[]surname;
+		delete[]type_of_account;
+	}
+
+	void Info() {
+		cout << "Name: " << this->name << ";" << " Surname: " << this->surname << ";" << " Account Type: " << this->type_of_account << ";" << " Balance: " << this->balance << endl;
+	}
+
+	float GetBalance() {
+		return this->balance;
+	}
+
+	friend void Transfer(BankAccount& transfer_acc, BankAccount& recieve_acc, float amount);
+};
+
+void Transfer(BankAccount& transfer_acc, BankAccount& recieve_acc, float amount) {
+	if (strcmp(transfer_acc.type_of_account,"Credit") == 0){
+		transfer_acc.balance -= amount;
+		recieve_acc.balance += amount;
+		cout << "Perevod prosol uspesno!" << endl;
+	}
+	else {
+		if (transfer_acc.balance >= amount) {
+			transfer_acc.balance -= amount;
+			recieve_acc.balance += amount;
+			cout << "Perevod prosol uspesno!" << endl;
+		}
+		else {
+			cout << "Na scetu ne dostatocno sredstv!" << endl;
+		}
+	}
+}
+
+int main() {
+	// Task 1
+	
+	Student student1("Ramazan", 45);
+	Student student2("Riad", 55);
+	Student student3("Faik", 75);
+	Student student4("Ayaz", 65);
+	
+	auto check = [](Student& student) { return (student.GetGrade() > 50) ? true : false; };
+
+	student1.Info();
+	cout << boolalpha << check(student1)<< endl;
+	Increase(student1);
+	student1.Info();
+	cout << boolalpha << check(student1) << endl;
+	Increase(student1);
+	student1.Info();
+	cout << boolalpha << check(student1) << endl;
+
+
+	// Task 2
+
+	BankAccount acc1("Ramazan","Guliyev","Credit",0);
+	BankAccount acc2("Riad", "Sadiqov", "Regular", 100);
+
+	auto check = [](BankAccount& acc) { cout << (acc.GetBalance() <= 0 ? "Balance otricatelni" : "Vse Super") << endl;};
+
+	
+	acc1.Info();
+	acc2.Info();
+	Transfer(acc1, acc2, 100);
+	Transfer(acc1, acc2, 100);
+	Transfer(acc1, acc2, 100);
+	acc1.Info();
+	acc2.Info();
+	check(acc1);
+
+	return 0;
+}

@@ -1,0 +1,253 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+
+// Task 1
+class Animal {
+protected:
+	char* name;
+	int age;
+public:
+	Animal(const char* name, int age) {
+		this->name = new char[strlen(name) + 1];
+
+		strcpy_s(this->name, strlen(name) + 1, name);
+		this->age = age;
+	}
+
+	Animal() {
+		this->name = nullptr;
+		this->age= 0;
+	}
+
+	~Animal() {delete[]name;}
+
+	virtual void Show() {
+		cout << "Name: " << this->name << endl;
+		cout << "Age: " << this->age << endl;
+	}
+};
+
+class Dog : public Animal{
+private:
+	char* breed;
+public:
+	
+	Dog(const char* name,int age,const char* breed) :Animal(name, age) {
+		this->breed = new char[strlen(breed) + 1];
+		strcpy_s(this->breed, strlen(breed) + 1,breed);
+	}
+
+	void Show() override {
+		cout << "Name: " << this->name << endl;
+		cout << "Age: " << this->age << endl;
+		cout << "Breed: " << this->breed << endl;
+	}
+
+	Dog() {this->breed = nullptr;}
+
+	~Dog() {delete[]breed;}
+
+};
+
+class Cat : public Animal{
+private:
+	char* furColor;
+public:
+	Cat(const char* name, int age, const char* furColor) :Animal(name, age) {
+		this->furColor = new char[strlen(furColor) + 1];
+		strcpy_s(this->furColor, strlen(furColor) + 1, furColor);
+	}
+
+	void Show() override {
+		cout << "Name: " << this->name << endl;
+		cout << "Age: " << this->age << endl;
+		cout << "Fur color: " << this->furColor << endl;
+	}
+
+	Cat() { this->furColor = nullptr; }
+
+	~Cat() { delete[]furColor; }
+
+};
+
+
+// Task 2
+class Product {
+protected:
+	char* name;
+	float price;
+public:
+	Product(const char* name, float price) {
+		this->name = new char[strlen(name) + 1];
+
+		strcpy_s(this->name, strlen(name) + 1, name);
+		this->price = price;
+	}
+
+	Product() {
+		this->name = nullptr;
+		this->price = 0;
+	}
+
+	virtual void Show() {
+		cout << "Name: " << this->name << endl;
+		cout << "Price: " << this->price << endl;
+	}
+
+	~Product() { delete[]name; }
+};
+
+class Electronics : public Product{
+private:
+	float power;
+public:
+	Electronics(const char* name, float price, float power) : power(power), Product(name,price) {}
+
+	Electronics() {this->power = 0;}
+
+	void Show() override {
+		cout << "Name: " << this->name << endl;
+		cout << "Price: " << this->price << endl;
+		cout << "Power: " << this->power << endl;
+	}
+};
+
+class Clothing : public Product {
+private:
+	float size;
+public:
+	Clothing(const char* name, float price, float size) : size(size), Product(name, price) {}
+
+	Clothing() { this->size = 0; }
+
+	void Show() override {
+		cout << "Name: " << this->name << endl;
+		cout << "Price: " << this->price << endl;
+		cout << "Power: " << this->size << endl;
+	}
+};
+
+
+// Task 3
+
+class Employee {
+protected:
+	char* name;
+	float salary;
+public:
+	Employee(const char* name, float salary) {
+		this->name = new char[strlen(name) + 1];
+
+		strcpy_s(this->name, strlen(name) + 1, name);
+		this->salary = salary;
+	}
+
+	Employee(const char* name) {
+		this->name = new char[strlen(name) + 1];
+
+		strcpy_s(this->name, strlen(name) + 1, name);
+	}
+
+	Employee() {
+		this->name = nullptr;
+		this->salary = 0;
+	}
+
+	virtual void calculateSalary() {
+		cout << "Vasha zarplata: " << this->salary << endl;	
+	}
+
+	~Employee() { delete[]name; }
+
+};
+
+class HourlyEmployee : public Employee{
+private:
+	int hoursWorked;
+	float hourlyRate;
+public:
+	HourlyEmployee(const char* name, int hoursWorked, float hourlyRate) : Employee(name){
+		this->hoursWorked = hoursWorked;
+		this->hourlyRate = hourlyRate;
+	}
+
+	HourlyEmployee() {
+		this->hoursWorked = 0;
+		this->hourlyRate = 0;
+	}
+
+	void calculateSalary() override{
+		cout << "Vasha zarplata: " << this->hoursWorked * this->hourlyRate << endl;
+	}
+
+}; 
+
+
+class SalariedEmployee : public Employee{
+protected:
+	float fixedSalary;
+public:
+	SalariedEmployee(const char* name, float fixedSalary) : Employee(name) {
+		this->fixedSalary = fixedSalary;
+	}
+
+	SalariedEmployee() {
+		this->fixedSalary = 0;
+	}
+
+	void calculateSalary() override{
+		cout << "Vasha zarplata: " << this->fixedSalary << endl;
+	}
+
+};
+
+class Manager : public SalariedEmployee{
+private:
+	float bonusPercentage;
+public:
+	Manager(const char* name, float fixedSalary, float bonusPercentage) : SalariedEmployee(name,fixedSalary) {
+		this->bonusPercentage = bonusPercentage;
+	}
+
+	Manager() {
+		this->bonusPercentage = 0;
+	}
+
+	void calculateSalary() override{
+		cout << "Vasha zarplata s bonusami: " << this->fixedSalary + (this->fixedSalary * this->bonusPercentage) << endl;
+	}
+};
+
+int main() {
+
+
+	// Task 1
+	Dog dog("Bobik",25,"Doberman");
+	dog.Show();
+
+	Cat cat("Barsik", 15, "Rozoviy");
+	cat.Show();
+	
+
+	// Task 2
+	Electronics elec("Mobile", 500, 55.5);
+	elec.Show();
+
+	Clothing clot("Shoes", 100, 41.5);
+	clot.Show();
+
+
+	// Task 3
+
+	Employee* employees[3] = { new HourlyEmployee("Celovek1",15,50), new SalariedEmployee("Celovek2",3000), new Manager("Celovek2",4000,0.5) };
+
+	employees[0]->calculateSalary();
+	employees[1]->calculateSalary();
+	employees[2]->calculateSalary();
+
+
+	return 0;
+}
