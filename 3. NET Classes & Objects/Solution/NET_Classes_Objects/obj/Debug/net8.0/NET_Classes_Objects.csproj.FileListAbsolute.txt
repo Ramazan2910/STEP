@@ -1,0 +1,14 @@
+C:\Users\User\RiderProjects\NET_Classes_Objects\NET_Classes_Objects\bin\Debug\net8.0\NET_Classes_Objects.exe
+C:\Users\User\RiderProjects\NET_Classes_Objects\NET_Classes_Objects\bin\Debug\net8.0\NET_Classes_Objects.deps.json
+C:\Users\User\RiderProjects\NET_Classes_Objects\NET_Classes_Objects\bin\Debug\net8.0\NET_Classes_Objects.runtimeconfig.json
+C:\Users\User\RiderProjects\NET_Classes_Objects\NET_Classes_Objects\bin\Debug\net8.0\NET_Classes_Objects.dll
+C:\Users\User\RiderProjects\NET_Classes_Objects\NET_Classes_Objects\bin\Debug\net8.0\NET_Classes_Objects.pdb
+C:\Users\User\RiderProjects\NET_Classes_Objects\NET_Classes_Objects\obj\Debug\net8.0\NET_Classes_Objects.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\RiderProjects\NET_Classes_Objects\NET_Classes_Objects\obj\Debug\net8.0\NET_Classes_Objects.AssemblyInfoInputs.cache
+C:\Users\User\RiderProjects\NET_Classes_Objects\NET_Classes_Objects\obj\Debug\net8.0\NET_Classes_Objects.AssemblyInfo.cs
+C:\Users\User\RiderProjects\NET_Classes_Objects\NET_Classes_Objects\obj\Debug\net8.0\NET_Classes_Objects.csproj.CoreCompileInputs.cache
+C:\Users\User\RiderProjects\NET_Classes_Objects\NET_Classes_Objects\obj\Debug\net8.0\NET_Classes_Objects.dll
+C:\Users\User\RiderProjects\NET_Classes_Objects\NET_Classes_Objects\obj\Debug\net8.0\refint\NET_Classes_Objects.dll
+C:\Users\User\RiderProjects\NET_Classes_Objects\NET_Classes_Objects\obj\Debug\net8.0\NET_Classes_Objects.pdb
+C:\Users\User\RiderProjects\NET_Classes_Objects\NET_Classes_Objects\obj\Debug\net8.0\NET_Classes_Objects.genruntimeconfig.cache
+C:\Users\User\RiderProjects\NET_Classes_Objects\NET_Classes_Objects\obj\Debug\net8.0\ref\NET_Classes_Objects.dll

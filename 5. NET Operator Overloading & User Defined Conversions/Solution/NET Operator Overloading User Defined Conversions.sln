@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET Operator Overloading User Defined Conversions", "NET Operator Overloading User Defined Conversions\NET Operator Overloading User Defined Conversions.csproj", "{F95B7E56-82B4-472C-A4DB-0CF2667237DE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F95B7E56-82B4-472C-A4DB-0CF2667237DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F95B7E56-82B4-472C-A4DB-0CF2667237DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F95B7E56-82B4-472C-A4DB-0CF2667237DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F95B7E56-82B4-472C-A4DB-0CF2667237DE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

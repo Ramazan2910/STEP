@@ -1,0 +1,14 @@
+C:\Users\User\RiderProjects\NET Operator Overloading User Defined Conversions\NET Operator Overloading User Defined Conversions\bin\Debug\net8.0\NET Operator Overloading User Defined Conversions.exe
+C:\Users\User\RiderProjects\NET Operator Overloading User Defined Conversions\NET Operator Overloading User Defined Conversions\bin\Debug\net8.0\NET Operator Overloading User Defined Conversions.deps.json
+C:\Users\User\RiderProjects\NET Operator Overloading User Defined Conversions\NET Operator Overloading User Defined Conversions\bin\Debug\net8.0\NET Operator Overloading User Defined Conversions.runtimeconfig.json
+C:\Users\User\RiderProjects\NET Operator Overloading User Defined Conversions\NET Operator Overloading User Defined Conversions\bin\Debug\net8.0\NET Operator Overloading User Defined Conversions.dll
+C:\Users\User\RiderProjects\NET Operator Overloading User Defined Conversions\NET Operator Overloading User Defined Conversions\bin\Debug\net8.0\NET Operator Overloading User Defined Conversions.pdb
+C:\Users\User\RiderProjects\NET Operator Overloading User Defined Conversions\NET Operator Overloading User Defined Conversions\obj\Debug\net8.0\NET Operator Overloading User Defined Conversions.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\RiderProjects\NET Operator Overloading User Defined Conversions\NET Operator Overloading User Defined Conversions\obj\Debug\net8.0\NET Operator Overloading User Defined Conversions.AssemblyInfoInputs.cache
+C:\Users\User\RiderProjects\NET Operator Overloading User Defined Conversions\NET Operator Overloading User Defined Conversions\obj\Debug\net8.0\NET Operator Overloading User Defined Conversions.AssemblyInfo.cs
+C:\Users\User\RiderProjects\NET Operator Overloading User Defined Conversions\NET Operator Overloading User Defined Conversions\obj\Debug\net8.0\NET Operator Overloading User Defined Conversions.csproj.CoreCompileInputs.cache
+C:\Users\User\RiderProjects\NET Operator Overloading User Defined Conversions\NET Operator Overloading User Defined Conversions\obj\Debug\net8.0\NET Operator Overloading User Defined Conversions.dll
+C:\Users\User\RiderProjects\NET Operator Overloading User Defined Conversions\NET Operator Overloading User Defined Conversions\obj\Debug\net8.0\refint\NET Operator Overloading User Defined Conversions.dll
+C:\Users\User\RiderProjects\NET Operator Overloading User Defined Conversions\NET Operator Overloading User Defined Conversions\obj\Debug\net8.0\NET Operator Overloading User Defined Conversions.pdb
+C:\Users\User\RiderProjects\NET Operator Overloading User Defined Conversions\NET Operator Overloading User Defined Conversions\obj\Debug\net8.0\NET Operator Overloading User Defined Conversions.genruntimeconfig.cache
+C:\Users\User\RiderProjects\NET Operator Overloading User Defined Conversions\NET Operator Overloading User Defined Conversions\obj\Debug\net8.0\ref\NET Operator Overloading User Defined Conversions.dll
