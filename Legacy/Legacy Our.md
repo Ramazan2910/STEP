@@ -30,7 +30,7 @@ using System.Runtime.InteropServices;
 class Program
 {
     // Загрузка DLL и вызов функции
-    [DllImport("user32.dll", CharSet = CharSet.Auto)]
+    [DllImport("user32.dll")]
     public static extern int MessageBox(int hWnd, string text, string caption, uint type);
 
     static void Main()
