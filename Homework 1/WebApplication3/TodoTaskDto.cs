@@ -1,0 +1,1 @@
+public record TodoTaskDto(string Title, bool IsCompleted);
